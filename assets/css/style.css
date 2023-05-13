@@ -1,0 +1,83 @@
+.game-container {
+    width: 100%;
+    display: flex;
+}
+
+.board {
+    width: 75%;
+    height: 900px;
+    background-image: url("https://imgur.com/KrlYuoJ.png");
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+    .parent {
+        width: 96%;
+        display: grid;
+        grid-template-columns: repeat(16, 1fr);
+        grid-template-rows: repeat(17, 1fr);
+        grid-column-gap: 8px;
+        grid-row-gap: 10px;
+        margin-left: 2%;
+        margin-top: 1%;
+    }
+
+.field {
+    width: 42px;
+    height: 42px;
+    background-color: #000000;
+}
+
+.red {
+    background-color: #ec0808;
+}
+
+.green {
+    background-color: #0dbb07;
+}
+
+.center-flex {
+    display:flex;
+    justify-content:center;
+}
+
+.game-items {
+    width: 20%;
+}
+
+.dice-btn {
+    width: 150px;
+    margin: 15% 0;
+}
+
+.dice {
+    width: 150px;
+    height: 150px;
+    background-image: url("https://imgur.com/Bbw1rQ6.png");
+    background-color: #000000;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.card-stack {
+    width: 200px;
+    height: 300px;
+    text-align: center;
+    align-self: center;
+    border-radius: 10px;
+}
+
+.liberate-card-stack {
+    background-color: #0dbb07;
+    margin-bottom: 50px;
+}
+
+.trap-card-stack {
+    background-color: #ec0808;
+
+}
