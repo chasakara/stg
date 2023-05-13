@@ -1,4 +1,4 @@
-let playerPosition = 0; // istarting point for the player on the game board.
+let playerPosition = 1; // istarting point for the player on the game board.
 
 
 // Function to roll the dice and move the player(Ant)
@@ -139,8 +139,13 @@ function handlePlayerPosition() {
   
     if (positionActions[playerPosition]) {
       positionActions[playerPosition]();
+    } else {
+      console.log("No action defined for position", playerPosition);
     }
+    
+    console.log("Current position:", playerPosition); // Display the current position
   }
+  
   
   // Function to handle positive action
   function handlePositiveAction() {
@@ -211,33 +216,49 @@ function handlePlayerPosition() {
       playerPosition -= steps;
     }
   }
+
  // This function includes logic for player movement through the first short cut
 
-  function calculateNextPosition(currentPosition, steps) {
-    let nextPosition;
-  
-    if (currentPosition >= 1 && currentPosition <= 14) {
-      // Right path from positions 1 to 14
-      nextPosition = currentPosition + steps;
-      if (nextPosition > 14) {
-        nextPosition = 20;
-      }
-    } else if (currentPosition >= 15 && currentPosition <= 19) {
-      // Shortcut path from positions 15 to 19
-      nextPosition = currentPosition + steps;
-      if (nextPosition > 19) {
-        nextPosition = 14 + (nextPosition - 19);
-      }
-    } else {
-      // Regular path after position 20
-      nextPosition = currentPosition + steps;
-      if (nextPosition > 120) {
-        nextPosition = 120;
+ function calculateNextPosition(currentPosition, steps) {
+  let nextPosition;
+
+  if (currentPosition >= 1 && currentPosition <= 14) {
+    // Right path from positions 1 to 14
+    nextPosition = currentPosition + steps;
+    if (nextPosition > 14) {
+      nextPosition = 20;
+    }
+  } else if (currentPosition >= 15 && currentPosition <= 19) {
+    // Shortcut path from positions 15 to 19
+    nextPosition = currentPosition + steps;
+    if (nextPosition > 19) {
+      nextPosition = 14;
+      if (nextPosition + steps > 19) {
+        nextPosition = 20 + (nextPosition + steps - 19);
       }
     }
-  
-    return nextPosition;
+  } else {
+    // Regular path after position 20
+    nextPosition = currentPosition + steps;
+    if (nextPosition > 120) {
+      nextPosition = 120;
+    }
   }
 
+  return nextPosition;
+}
 
-  movePlayer(7);
+
+
+  // Test case for moving through the right path (positions 1 to 14)
+console.log(calculateNextPosition(1, 3)); // Expected output: 4
+console.log(calculateNextPosition(5, 2)); // Expected output: 7
+console.log(calculateNextPosition(10, 5)); // Expected output: 20 
+
+// Test case for moving through the shortcut path (positions 15 to 19)
+console.log(calculateNextPosition(15, 3)); // Expected output: 18 (within the shortcut range)
+console.log(calculateNextPosition(15, 5)); // Expected output: 20 (exits the shortcut and enters the regular path)
+
+// Test case for moving through the regular path (positions after 20)
+console.log(calculateNextPosition(25, 3)); // Expected output: 28
+console.log(calculateNextPosition(120, 5)); // Expected output: 120 (reaches the end of the game board)
