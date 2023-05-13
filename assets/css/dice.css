@@ -243,7 +243,6 @@ body {
     font-family: "Trade Gothic LT Std", sans-serif;
     font-weight: bolder;
     font-size: 18px;
-    padding: 6px 12px;
     border-radius: 12px;
     transition: 0.4s ease-in-out;
 }
