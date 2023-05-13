@@ -63,6 +63,7 @@
     #903444
   );
   rotate: -5deg;
+  box-shadow: rgb(255, 0, 0) 0px 3px 8px;
 }
 
 .green {
@@ -75,6 +76,7 @@
     #34904c
   );
   rotate: 5deg;
+  box-shadow: rgb(30, 255, 0) 0px 3px 8px;
 }
 
 .center-flex {
