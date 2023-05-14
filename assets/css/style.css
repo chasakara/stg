@@ -399,7 +399,16 @@ footer a:hover {
   overflow: hidden;
   font-family: "Trade Gothic LT Std", sans-serif;
   font-weight: bolder;
+}
 
+.game-name {
+  width: 150%;
+  height: 100px;
+  background-image: url("https://imgur.com/f8vcMNS.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 0 90px 14%;
 }
 
 .btn-wrapper {
@@ -501,4 +510,55 @@ footer a:hover {
 
 .display {
   visibility: visible;
+
+/* Modal */
+
+.modal {
+  width: 100%; 
+  height: 100vh; 
+  display: none; 
+  position: fixed; 
+  left: 0;
+  top: 0;
+  overflow: auto; 
+  z-index: 1;
+}
+
+.modal-content {
+  width: 50%;
+  max-height: 57vh;
+  position: relative;
+  text-align: center;
+  font-size: 14pt;
+  color: #000;
+  background-color: #fefefe;
+  border: 3px solid #c4c4c4;
+  border-radius: 10px;
+  overflow: auto; 
+  padding: 20px;
+  margin: 9% auto;
+}
+
+.modal-content h2 {
+  font-size: 44px;
+  padding: 10px 0 25px 0;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #2c4eaa;
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: rgb(0, 89, 255) 0 0 8px;
+  margin: 8px 20px 0 0;
+}
+
+.close:hover,
+.close:focus {
+color: #ec0808;
+text-decoration: none;
+text-shadow: rgb(255, 0, 0) 0 0 8px;
+cursor: pointer;
 }
