@@ -354,6 +354,35 @@ button:focus:not(:focus-visible) {
   outline: none;
 }
 
+/* Footer area */
+footer {
+	font-family: "Trade Gothic LT Std", sans-serif;
+	background-color: #333;
+	color: #fff;
+	padding: 0.5em;
+	text-align: center;
+}
+
+footer p {
+	margin: 0.2em 0 1em 0;
+}
+
+footer span {
+  white-space: nowrap;
+	white-space: ;
+}
+ 
+footer a {
+	text-decoration: none;
+	padding: 0.3em;
+	color: #fff;
+}
+  
+footer a:hover {
+	z-index: 1;
+	background-color: #0077b5;  /* The LinkedIn blue */
+	text-decoration: underline;
+}
 
 /* Home Page */
 
