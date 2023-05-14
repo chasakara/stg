@@ -1,12 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Trade Gothic LT Std", sans-serif;
+  font-weight: bolder;
+}
+
+.fa-home {
+  color: #2c4eaa;
+  font-size: 40px;
+  text-shadow: 0 0 7px rgb(0, 89, 255);
+}
+
 .game-container {
   width: 100%;
   display: flex;
-  height: 900px;
+  height: 1100px;
 }
 
 .board {
   width: 1000px;
-  height: 900px;
+  height: 1100px;
   background-image: url("https://imgur.com/KrlYuoJ.png");
   background: linear-gradient(
     to right,
@@ -63,6 +76,7 @@
     #903444
   );
   rotate: -5deg;
+  box-shadow: rgb(255, 0, 0) 0px 3px 8px;
 }
 
 .green {
@@ -75,6 +89,7 @@
     #34904c
   );
   rotate: 5deg;
+  box-shadow: rgb(30, 255, 0) 0px 3px 8px;
 }
 
 .center-flex {
@@ -85,6 +100,10 @@
 .game-items {
   width: 20%;
   background-color: #808080;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .dice-btn {
@@ -93,6 +112,9 @@
 }
 
 .dice {
+  position: relative;
+  top: -170px;
+  left: -15px;
   width: 150px;
   height: 150px;
   background-image: url("https://imgur.com/Bbw1rQ6.png");
@@ -109,13 +131,56 @@
 }
 .card-stack {
   width: 200px;
-  height: 300px;
+  height: 250px;
   text-align: center;
   align-self: center;
   border-radius: 10px;
 }
 
 .liberate-card-stack {
+  top: 30px;
+  position: relative;
+  margin-bottom: 50px;
+  rotate: 5deg;
+}
+
+.trap-card-stack {
+  rotate: -5deg;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back,.flip-card-trap-front, .flip-card-trap-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
   background: radial-gradient(
     circle,
     #0dbb07,
@@ -124,12 +189,29 @@
     #2b9b44,
     #34904c
   );
-  margin-bottom: 50px;
-  rotate: 5deg;
+  color: black;
   box-shadow: rgb(30, 255, 0) 0px 3px 8px;
+  border-radius: 15px;
 }
 
-.trap-card-stack {
+/* Style the back side */
+.flip-card-back {
+  background: radial-gradient(
+    circle,
+    #0dbb07,
+    #16b029,
+    #21a639,
+    #2b9b44,
+    #34904c
+  );
+  color: black;
+  rotate: -5deg;
+  transform: rotateY(180deg);
+  box-shadow: rgb(30, 255, 0) 0px 3px 8px;
+  border-radius: 15px;
+}
+
+.flip-card-trap-front {
   background: radial-gradient(
     circle,
     #ec0808,
@@ -138,11 +220,29 @@
     #aa2c3e,
     #903444
   );
-  rotate: -5deg;
   box-shadow: rgb(255, 0, 0) 0px 3px 8px;
+  color: black;
+  border-radius: 15px;
 }
 
-button {
+/* Style the back side */
+.flip-card-trap-back {
+  background: radial-gradient(
+    circle,
+    #ec0808,
+    #d91325,
+    #c22134,
+    #aa2c3e,
+    #903444
+  );
+  rotate: 2deg;
+  box-shadow: rgb(255, 0, 0) 0px 3px 8px;
+  color: black;
+  transform: rotateY(180deg);
+  border-radius: 15px;
+}
+
+.roll {
   padding-top: 10px;
   position: relative;
   border: none;
@@ -175,12 +275,23 @@ button {
   width: 100%;
   height: 100%;
   border-radius: 12px;
-  background: linear-gradient(
-    to left,
-    hsl(340deg 100% 16%) 0%,
-    hsl(340deg 100% 32%) 8%,
-    hsl(340deg 100% 32%) 92%,
-    hsl(340deg 100% 16%) 100%
+  background: conic-gradient(
+    #e6e9bf,
+    #d2b5aa,
+    #cbaea3,
+    #d4b5ab,
+    #e6e9bf,
+    #d2b5aa,
+    #cbaea3,
+    #d4b5ab,
+    #e6e9bf,
+    #d2b5aa,
+    #cbaea3,
+    #d4b5ab,
+    #e6e9bf,
+    #d2b5aa,
+    #cbaea3,
+    #d4b5ab
   );
 }
 
@@ -190,15 +301,26 @@ button {
   padding: 12px 27px;
   border-radius: 12px;
   font-size: 1.1rem;
-  color: white;
+  color: rgb(0, 0, 0);
   font-weight: bolder;
-  background-image: radial-gradient(rgb(0, 0, 0) 18.8%, transparent 26.4%),
-    radial-gradient(rgb(0, 0, 0) 18.8%, transparent 26.4%),
-    radial-gradient(rgb(117, 76, 81) 18.8%, transparent 26.4%),
-    radial-gradient(rgb(117, 76, 81) 18.8%, transparent 26.4%);
-  background-position: 0px 0px, 16px 16px, -1.6px 1.6px, 14.4px 17.6px;
-  background-size: 32px 32px;
-  background-color: rgb(255, 0, 0);
+  background: conic-gradient(
+    #d7d7d7,
+    #c3c3c3,
+    #cccccc,
+    #c6c6c6,
+    #d7d7d7,
+    #c3c3c3,
+    #cccccc,
+    #c6c6c6,
+    #d7d7d7,
+    #c3c3c3,
+    #cccccc,
+    #c6c6c6,
+    #d7d7d7,
+    #c3c3c3,
+    #cccccc,
+    #c6c6c6
+  );
   will-change: transform;
   transform: translateY(-4px);
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
@@ -260,4 +382,69 @@ footer a:hover {
 	z-index: 1;
 	background-color: #0077b5;  /* The LinkedIn blue */
 	text-decoration: underline;
+}
+
+/* Home Page */
+
+.home {
+  position: relative;
+}
+
+.main-image {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://imgur.com/XENjwp5.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  font-family: "Trade Gothic LT Std", sans-serif;
+  font-weight: bolder;
+
+}
+
+.btn-wrapper {
+  width: 30%;
+  position: absolute;
+  bottom: 0;
+  margin: 0 0 18% 40%;
+}
+
+.start-btn, .rules-btn {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  color: #000;
+  font-family: "Trade Gothic LT Std", sans-serif;
+  font-size: 30px;
+  font-weight: bolder;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 3% 5%;
+  margin-top: -500px;
+}
+
+.start-btn {
+  background: radial-gradient(
+    circle,
+    #0dbb07,
+    #16b029,
+    #21a639,
+    #2b9b44,
+    #34904c
+  );
+  box-shadow: rgb(30, 255, 0) 0px 3px 8px;
+}
+
+.rules-btn {
+  background: radial-gradient(
+    circle,
+    #086bec,
+    #1352d9,
+    #2154c2,
+    #2c4eaa,
+    #345190
+  );
+  box-shadow: rgb(0, 89, 255) 0px 3px 8px;
+  margin-left: 150px;
 }
