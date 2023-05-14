@@ -9,18 +9,27 @@
   color: #2c4eaa;
   font-size: 40px;
   text-shadow: 0 0 7px rgb(0, 89, 255);
+  margin: 10px 8px;
 }
 
 .game-container {
   width: 100%;
   display: flex;
   height: 1000px;
-  background-color: grey;
+  background-color: #176900;
+  background: radial-gradient(
+    circle,
+    #29be00,
+    #229c00,
+    #176900,
+    #104b00,
+    #061b00
+  );
 }
 
 .board {
-  width: 1000px;
-  height: 1000px;
+  width: 75%;
+  height: 100vh;
   background-image: url("https://imgur.com/KrlYuoJ.png");
   background-color: grey;
   background-position: center;
@@ -99,11 +108,13 @@ i {
 
 .game-items {
   width: 20%;
-  background-color: #808080;
+  /* background-color: #808080; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
+  margin-left: 10px;
 }
 
 .dice-btn {
@@ -113,7 +124,7 @@ i {
 
 .dice {
   position: relative;
-  top: -170px;
+  top: -115px;
   left: -15px;
   width: 150px;
   height: 150px;
@@ -123,15 +134,13 @@ i {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
 }
 .card-front {
   font-family: "Trade Gothic LT Std", sans-serif;
   font-weight: bolder;
 }
 .card-stack {
-  width: 200px;
-  height: 250px;
   text-align: center;
   align-self: center;
   border-radius: 10px;
@@ -140,18 +149,29 @@ i {
 .liberate-card-stack {
   top: 30px;
   position: relative;
-  margin-bottom: 50px;
+  margin-top: 30px;
+  margin-bottom: 70px;
   rotate: 5deg;
+  background-image: url("https://imgur.com/4UsQqRa.png");
+  background-color: #000000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .trap-card-stack {
+  background-image: url("https://imgur.com/0BpXtwq.png");
+  background-color: #000000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   rotate: -5deg;
 }
 
 .flip-card {
   background-color: transparent;
-  width: 300px;
-  height: 200px;
+  width: 200px;
+  height: 227px;
   perspective: 1000px;
 }
 
@@ -181,14 +201,14 @@ i {
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle,
     #0dbb07,
     #16b029,
     #21a639,
     #2b9b44,
     #34904c
-  );
+  ); */
   color: black;
   box-shadow: rgb(30, 255, 0) 0px 3px 8px;
   border-radius: 15px;
@@ -212,14 +232,14 @@ i {
 }
 
 .flip-card-trap-front {
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle,
     #ec0808,
     #d91325,
     #c22134,
     #aa2c3e,
     #903444
-  );
+  ); */
   box-shadow: rgb(255, 0, 0) 0px 3px 8px;
   color: black;
   border-radius: 15px;
