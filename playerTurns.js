@@ -50,6 +50,7 @@ function determinePlayerOrder() {
     return Math.floor(Math.random() * 6) + 1;
   }
   players.forEach((player) => {
+    player.position = 0; // Set the initial position to 0 for each player
     player.initialRoll = rollDice();
   });
   players.sort((a, b) => b.initialRoll - a.initialRoll);
@@ -65,6 +66,8 @@ function playTurn(player) {
   console.log(`It's ${player.name}'s turn.`);
   const steps = rollDice();
   console.log(`${player.name} rolled ${steps}`);
+  // passed the player position as an argument when calling movePlayer
+  player.position = movePlayer(player.position, steps);
   movePlayer(steps);
   console.log(
     `${player.name} moved ${steps} steps and is now at position ${player.position}`
