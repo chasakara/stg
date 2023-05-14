@@ -15,6 +15,7 @@ Team Jar Jar javaScripters
 - Tinashe
 - MiaRasmussen
 - Ant_4P
+- Joe Playdon
 - Chris Grabham
 - Anthony Radose
 - Ryan Garry
