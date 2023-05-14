@@ -23,6 +23,9 @@ const randomDice = () => {
 
 
 
+
+
+
 // Functions to move player
 function movePlayer(steps) {
     playerPosition = calculateNextPosition(playerPosition, steps); // Update players postiion depending on dice roll value
@@ -39,6 +42,7 @@ function handlePlayerPosition() {
       //  logic for dice rolls at shortcut paths
       0: function () {
         // Handle action for position 0 (Starting point)
+
         alert("You have crash landed on the planet of Endor you must roll the dice to choose a path");
 
         if ( diceResult > 6) {
@@ -52,6 +56,7 @@ function handlePlayerPosition() {
       },
       51: function () {
         // Handle shortcut option for position 51
+
         alert("you must roll the dice to choose a path");
 
         if ( diceResult > 6) {
@@ -60,11 +65,13 @@ function handlePlayerPosition() {
         } else {
           alert("You rolled a total of", diceResult + ". follow the path!");
 
+
           playerPosition = 52;
         }
       },
       70: function () {
         // Handle shortcut option for position 70
+
         alert("you must roll the dice to choose a path");
 
         if ( diceResult > 6) {
@@ -73,11 +80,15 @@ function handlePlayerPosition() {
         } else {
           alert("You rolled a total of", diceResult + ". follow the path!");
 
+        
+
+
           playerPosition = 80;
         }
       },
       102: function () {
         // Handle shortcut option for position 102
+ 
         alert("you must roll the dice to choose a path");
 
         if ( diceResult > 6) {
@@ -86,12 +97,16 @@ function handlePlayerPosition() {
         } else {
           alert("You rolled a total of", diceResult + ". follow the path!");
 
+
           playerPosition = 103;
         }
       },
       1: function () {
         // Handle action for position 1
+
         alert("You are on the right path");
+
+        
       },
      
       
