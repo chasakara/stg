@@ -804,7 +804,6 @@ footer a:hover {
   width: 50%;
   max-height: 57vh;
   position: relative;
-  text-align: center;
   font-size: 14pt;
   color: #000;
   background-color: #fefefe;
@@ -816,9 +815,14 @@ footer a:hover {
 }
 
 .modal-content h2 {
+  text-align: center;
   font-size: 44px;
   padding: 10px 0 25px 0;
 }
+
+.modal-content h3 {
+  margin-top: 20px;
+  }
 
 .close {
   position: absolute;
