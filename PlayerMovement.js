@@ -1,4 +1,4 @@
-let playerPosition = 1; // istarting point for the player on the game board.
+let playerPosition = 0; // starting point for the player on the game board.
 
 
 // Function to roll the dice and move the player(Ant)
@@ -9,16 +9,18 @@ let diceOneResult;
 let diceTwoResult;
 let diceResult;
 
+// function to culculate the dice value
 const randomDice = () => {
     const randomOne = Math.floor(Math.random() * 6 + 1);
     const randomTwo = Math.floor(Math.random() * 6 + 1);
     rollDiceOne(randomOne);
     rollDiceTwo(randomTwo);
-    
+
     const diceResult = randomOne + randomTwo;
     movePlayer(diceResult);
 };
 
+// dice one rolling animation
 const rollDiceOne = (randomOne) => {
     diceOne.classList.add("rolling-animation");
 
@@ -62,6 +64,7 @@ const rollDiceOne = (randomOne) => {
     }, 1050);
 };
 
+// dice two rolling animation
 const rollDiceTwo = (randomTwo) => {
     diceTwo.classList.add("rolling-animation");
 
@@ -123,15 +126,63 @@ function movePlayer(steps) {
 // function to handle player position
 function handlePlayerPosition() {
     const positionActions = {
-      // negative action positions(traps)
-
+      
+      //  logic for dice rolls at shortcut paths
       0: function () {
         // Handle action for position 0 (Starting point)
-        console.log("You are at the starting point");
+        console.log("You have crash landed on the planet of Endor you must roll the dice to choose a path");
+
+        if ( diceResult > 6) {
+          console.log("You rolled a total of", diceResult + ". take the shortcut!");
+          playerPosition = 15;
+        } else {
+          console.log("You rolled a total of", diceResult + ". follow the path!");
+
+          playerPosition = 1;
+        }
+      },
+      51: function () {
+        // Handle shortcut option for position 51
+        console.log("you must roll the dice to choose a path");
+
+        if ( diceResult > 6) {
+          console.log("You rolled a total of", diceResult + ". take the shortcut!");
+          playerPosition = 62;
+        } else {
+          console.log("You rolled a total of", diceResult + ". follow the path!");
+
+          playerPosition = 52;
+        }
+      },
+      70: function () {
+        // Handle shortcut option for position 70
+        console.log("you must roll the dice to choose a path");
+
+        if ( diceResult > 6) {
+          console.log("You rolled a total of", diceResult + ". take the shortcut!");
+          playerPosition = 89;
+        } else {
+          console.log("You rolled a total of", diceResult + ". follow the path!");
+
+          playerPosition = 80;
+        }
+      },
+      102: function () {
+        // Handle shortcut option for position 102
+        console.log("you must roll the dice to choose a path");
+
+        if ( diceResult > 6) {
+          console.log("You rolled a total of", diceResult + ". take the shortcut!");
+          playerPosition = 112;
+        } else {
+          console.log("You rolled a total of", diceResult + ". follow the path!");
+
+          playerPosition = 103;
+        }
       },
       1: function () {
         // Handle action for position 1
-        console.log("take short cut or normal path");
+        console.log("You are on the right path");
       },
      
       
@@ -203,40 +254,40 @@ function handlePlayerPosition() {
         handlePositiveAction();
       },
       7: function () {
-        // Negative action for position 7
+        // Positive action for position 7
         handlePositiveAction();
       },
       33: function () {
-        // Negative action for position 33
+        //Positive action for position 33
         handlePositiveAction();
       },
   
       44: function () {
-        // Negative action for position 44
+        // Positive action for position 44
         handlePositiveAction();
       },
       57: function () {
-        // Negative action for position 57
+        // Positive action for position 57
         handlePositiveAction();
       },
       81: function () {
-        // Negative action for position 81
+        // Positive action for position 81
         handlePositiveAction();
       },
       85: function () {
-        // Negative action for position 85
+        // Positive action for position 85
         handlePositiveAction();
       },
       98: function () {
-        // Negative action for position 98
+        // Positive action for position 98
         handlePositiveAction();
       },
       107: function () {
-        // Negative action for position 107
+        // Positive action for position 107
         handlePositiveAction();
       },
       116: function () {
-        // Negative action for position 116
+        // Positive action for position 116
         handlePositiveAction();
       },
   
@@ -325,19 +376,20 @@ function handlePlayerPosition() {
     }
   }
 
- // This function includes logic for player movement through the first short cut
+ // This function includes logic for player movement through the short cuts and noraml paths.
 
  function calculateNextPosition(currentPosition, steps) {
   let nextPosition;
 
+  // Right path from positions 1 to 14
   if (currentPosition >= 1 && currentPosition <= 14) {
-    // Right path from positions 1 to 14
     nextPosition = currentPosition + steps;
     if (nextPosition > 14) {
       nextPosition = 20;
     }
-  } else if (currentPosition >= 15 && currentPosition <= 19) {
-    // Shortcut path from positions 15 to 19
+  }
+  // Shortcut path from positions 15 to 19
+  else if (currentPosition >= 15 && currentPosition <= 19) {
     nextPosition = currentPosition + steps;
     if (nextPosition > 19) {
       nextPosition = 14;
@@ -345,8 +397,61 @@ function handlePlayerPosition() {
         nextPosition = 20 + (nextPosition + steps - 19);
       }
     }
-  } else {
-    // Regular path after position 20
+  }
+  // Normal path from position 52 to 61
+  else if (currentPosition === 52) {
+    nextPosition = currentPosition + steps;
+    if (nextPosition > 61) {
+      nextPosition = 69;
+    }
+  }
+  // Shortcut path from position 62 to 68
+  else if (currentPosition === 62) {
+    nextPosition = currentPosition + steps;
+    if (nextPosition > 68) {
+      nextPosition = 89;
+    }
+  }
+  // Normal path from position 88 to 91
+  else if (currentPosition === 88) {
+    nextPosition = currentPosition + steps;
+    if (nextPosition > 91) {
+      nextPosition = 91 + (nextPosition - 91);
+    }
+  }
+  // Shortcut path from position 89 to 90
+  else if (currentPosition === 89) {
+    nextPosition = currentPosition + steps;
+    if (nextPosition > 90) {
+      nextPosition = 88;
+      if (nextPosition + steps > 90) {
+        nextPosition = 91 + (nextPosition + steps - 90);
+      }
+    }
+  }
+  // Shortcut path from position 90 to 88
+  else if (currentPosition === 90) {
+    nextPosition = currentPosition + steps;
+    if (nextPosition > 88) {
+      nextPosition = 91;
+    }
+  }
+  // Normal path from position 103 to 111
+  else if (currentPosition >= 103 && currentPosition <= 111) {
+    nextPosition = currentPosition + steps;
+    if (nextPosition > 111) {
+      nextPosition = 120;
+    }
+  }
+  // Shortcut path from position 112 to 119
+  else if (currentPosition === 112) {
+    nextPosition = currentPosition + steps;
+    if (nextPosition > 119) {
+      nextPosition = 111;
+    }
+  }
+  // Regular path after position 20 and final position at 120
+  else {
     nextPosition = currentPosition + steps;
     if (nextPosition > 120) {
       nextPosition = 120;
@@ -356,17 +461,3 @@ function handlePlayerPosition() {
   return nextPosition;
 }
 
-
-
-  // Test case for moving through the right path (positions 1 to 14)
-console.log(calculateNextPosition(1, 3)); // Expected output: 4
-console.log(calculateNextPosition(5, 2)); // Expected output: 7
-console.log(calculateNextPosition(10, 5)); // Expected output: 20 
-
-// Test case for moving through the shortcut path (positions 15 to 19)
-console.log(calculateNextPosition(15, 3)); // Expected output: 18 (within the shortcut range)
-console.log(calculateNextPosition(15, 5)); // Expected output: 20 (exits the shortcut and enters the regular path)
-
-// Test case for moving through the regular path (positions after 20)
-console.log(calculateNextPosition(25, 3)); // Expected output: 28
-console.log(calculateNextPosition(120, 5)); // Expected output: 120 (reaches the end of the game board)
