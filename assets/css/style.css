@@ -457,6 +457,60 @@ footer a:hover {
   margin-left: 150px;
 }
 
+/* Intro Page */
+#intro-body {
+  background-color: #000;
+  text-align: center;
+}
+
+#video-container {
+  width: 85vw;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#intro-video {
+  width: 100%;
+}
+
+.continue-btn {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  color: #000;
+  font-family: "Trade Gothic LT Std", sans-serif;
+  font-size: 30px;
+  font-weight: bolder;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 0 auto;
+  cursor: pointer;
+  background: radial-gradient(
+    circle,
+    #0DBB07,
+    #16B029,
+    #21A639,
+    #2B9B44,
+    #34904C
+  );
+  box-shadow: rgb(30, 255, 0) 0px 3px 8px;
+}
+
+#countdown-timer {
+  margin: auto;
+  color: white;
+  font-size: 30px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.display {
+  visibility: visible;
+
 /* Modal */
 
 .modal {
