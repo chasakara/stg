@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Path to the Jedi Order</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="/assets/css/style.css" />
+        <link
+            href="https://fonts.cdnfonts.com/css/trade-gothic-lt-std"
+            rel="stylesheet"
+        />
+        <script
+            src="https://kit.fontawesome.com/ed532fafaf.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body id="intro-body">
+
+        <div id="video-container">
+            <p id="countdown-timer" class="hidden">
+                Game will load in... 
+                <span id="countdownTimer">5 </span>
+            </p>
+            <video id="intro-video" onended="redirectToGame()" autoplay controls="false">
+                <source src="/docs/intro.mp4" type="video/mp4" />
+            </video>
+            <a class="continue-btn" onclick="redirectToGame()">Continue...</a>
+        </div>
+
+        <script>
+            const redirectToGame = function () {
+                document.getElementById("countdown-timer").classList.remove("hidden");
+                document.getElementById("countdown-timer").classList.add("display");
+                let timeLeft = 5;
+                let downloadTimer = setInterval(function () {
+                    timeLeft--;
+                    document.getElementById("countdownTimer").textContent =
+                        timeLeft;
+                    if (timeLeft <= 0) {
+                        window.open("index.html", "_self");  
+                    } 
+                }, 1000);
+            };
+        </script>
+        
+    </body>
+</html>
