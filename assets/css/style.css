@@ -117,25 +117,267 @@ i {
   margin-left: 10px;
 }
 
+/* Dice Styling */
+.dice-wrapper {
+  height: 350px;
+  width: 200px;
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  border: solid 1px black;
+  border-radius: 15px;
+  background: #333333; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #dd1818,
+    #333333
+  ); 
+  background: linear-gradient(
+    to right,
+    #dd1818,
+    #333333
+  ); 
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+@keyframes rolling {
+  50% {
+    transform: rotateX(455deg) rotateY(455deg);
+  }
+}
+
+.rolling-animation {
+  animation: rolling 1s;
+}
+
+/* Dice One */
+.diceOne {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    transform-style: preserve-3d;
+    transition: 1s ease;
+}
+
+.faceOne {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 5px solid #f6f3f0;
+  transform-style: preserve-3d;
+  background: linear-gradient(145deg, #dddbd8, #fff);
+}
+
+.faceOne::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: #f6f3f0;
+  transform: translateZ(-1px);
+}
+
+.faceOne::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #131210;
+}
+
+.frontOne {
+  transform: translateZ(50px);
+}
+
+.backOne {
+  transform: rotateX(180deg) translateZ(50px);
+}
+
+.topOne {
+  transform: rotateX(90deg) translateZ(50px);
+}
+
+.bottomOne {
+  transform: rotateX(-90deg) translateZ(50px);
+}
+
+.leftOne {
+  transform: rotateY(-90deg) translateZ(50px);
+}
+
+.rightOne {
+  transform: rotateY(90deg) translateZ(50px);
+}
+
+.frontOne::after {
+  width: 30px;
+  height: 30px;
+  background: #131210;
+  margin: -15px 0 0 -15px;
+}
+
+.backOne::after {
+  margin: -35px 0 0 -30px;
+  box-shadow: 40px 0, 0 25px, 40px 25px, 0 50px, 40px 50px;
+}
+
+.topOne::after {
+  margin: -30px 0 0 -30px;
+  box-shadow: 40px 40px;
+}
+
+.bottomOne::after {
+  margin: -36px 0 0 -36px;
+  box-shadow: 26px 26px, 52px 52px, 52px 0, 0 52px;
+}
+
+.rightOne::after {
+  margin: -30px 0 0 -30px;
+  box-shadow: 40px 0, 0 40px, 40px 40px;
+}
+
+.leftOne::after {
+  margin: -35px 0 0 -35px;
+  box-shadow: 25px 25px, 50px 50px;
+}
+
+/* Dice Two */
+.diceTwo {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  transform-style: preserve-3d;
+  transition: 1s ease;
+}
+
+.faceTwo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 4px solid #2e2b26;
+  transform-style: preserve-3d;
+  background: linear-gradient(145deg, #000, #2e2b26);
+}
+
+.faceTwo::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: #2e2b26;
+  transform: translateZ(-1px);
+}
+
+.faceTwo::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: red;
+}
+
+.frontTwo {
+  transform: translateZ(50px);
+}
+
+.backTwo {
+  transform: rotateX(180deg) translateZ(50px);
+}
+
+.topTwo {
+  transform: rotateX(90deg) translateZ(50px);
+}
+
+.bottomTwo {
+  transform: rotateX(-90deg) translateZ(50px);
+}
+
+.leftTwo {
+  transform: rotateY(-90deg) translateZ(50px);
+}
+
+.rightTwo {
+  transform: rotateY(90deg) translateZ(50px);
+}
+
+.frontTwo::after {
+  width: 30px;
+  height: 30px;
+  background: red;
+  margin: -15px 0 0 -15px;
+}
+
+.backTwo::after {
+  margin: -35px 0 0 -30px;
+  box-shadow: 40px 0 red, 0 25px red, 40px 25px red, 0 50px red, 40px 50px red;
+}
+
+.topTwo::after {
+  margin: -30px 0 0 -30px;
+  box-shadow: 40px 40px red;
+}
+
+.bottomTwo::after {
+  margin: -36px 0 0 -36px;
+  box-shadow: 26px 26px red, 52px 52px red, 52px 0 red, 0 52px red;
+}
+
+.rightTwo::after {
+  margin: -30px 0 0 -30px;
+  box-shadow: 40px 0 red, 0 40px red, 40px 40px red;
+}
+
+.leftTwo::after {
+  margin: -35px 0 0 -35px;
+  box-shadow: 25px 25px red, 50px 50px red;
+}
+
+/* Roll Dice Button */
+.roll {
+  cursor: pointer;
+  font-family: "Trade Gothic LT Std", sans-serif;
+  font-weight: bolder;
+  font-size: 18px;
+  border-radius: 12px;
+  transition: 0.4s ease-in-out;
+}
+
+.roll:hover {
+  color: #dddbd8;
+  background-color: #131210;
+}
+
+/* Result DIV */
+.result p {
+  font-family: "Trade Gothic LT Std", sans-serif;
+  font-weight: bolder;
+  font-size: 18px;
+  margin: 0;
+  color: white;
+}
+
+.result {
+  visibility: hidden;
+}
+
 .dice-btn {
   width: 150px;
   margin: 15% 0;
 }
 
-.dice {
-  position: relative;
-  top: -115px;
-  left: -15px;
-  width: 150px;
-  height: 150px;
-  background-image: url("https://imgur.com/Bbw1rQ6.png");
-  background-color: #000000;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 10px;
-  margin-bottom: 60px;
-}
+/* Card Styling */
 .card-front {
   font-family: "Trade Gothic LT Std", sans-serif;
   font-weight: bolder;
