@@ -157,6 +157,7 @@ i {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  box-shadow: rgb(30, 255, 0) 0px 3px 8px;
 }
 
 .trap-card-stack {
@@ -166,14 +167,25 @@ i {
   background-repeat: no-repeat;
   background-size: cover;
   rotate: -5deg;
+  box-shadow: rgb(255, 0, 0) 0px 3px 8px;
 }
 
 .flip-card {
   background-color: transparent;
   width: 200px;
   height: 227px;
+  box-shadow: -3px 3px 1px #838383, -5px 5px 1px #646464, -7px 7px 1px #4e4e4e, -9px 9px 1px #3d3d3d, -11px 11px 1px #2c2c2c, -13px 13px 1px #1f1f1f, -15px 15px 1px #111111, -17px 17px 1px #000000;
   perspective: 1000px;
 }
+
+/* .flip-card .liberate-card-stack {
+  box-shadow: -3px 3px 1px #00da13, -5px 5px 1px #00c411, -7px 7px 1px #00ad0e, -9px 9px 1px #00940c, -11px 11px 1px #00790a, -13px 13px 1px #006308, -15px 15px 1px #004e07, -17px 17px 1px #003805;
+}
+
+.flip-card .trap-card-stack {
+  box-shadow: -3px 3px 1px #da0000, -5px 5px 1px #c40000, -7px 7px 1px #ad0000, -9px 9px 1px #940000, -11px 11px 1px #790000, -13px 13px 1px #630000, -15px 15px 1px #4e0000, -17px 17px 1px #380000;
+} */
+
 
 /* This container is needed to position the front and back side */
 .flip-card-inner {
@@ -186,9 +198,9 @@ i {
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
+/* .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
-}
+} */
 
 /* Position the front and back side */
 .flip-card-front, .flip-card-back,.flip-card-trap-front, .flip-card-trap-back {
