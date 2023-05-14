@@ -1,6 +1,8 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: "Trade Gothic LT Std", sans-serif;
+  font-weight: bolder;
 }
 
 .fa-home {
@@ -138,6 +140,47 @@
 .liberate-card-stack {
   top: 30px;
   position: relative;
+  margin-bottom: 50px;
+  rotate: 5deg;
+}
+
+.trap-card-stack {
+  rotate: -5deg;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back,.flip-card-trap-front, .flip-card-trap-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
   background: radial-gradient(
     circle,
     #0dbb07,
@@ -146,12 +189,29 @@
     #2b9b44,
     #34904c
   );
-  margin-bottom: 50px;
-  rotate: 5deg;
+  color: black;
   box-shadow: rgb(30, 255, 0) 0px 3px 8px;
+  border-radius: 15px;
 }
 
-.trap-card-stack {
+/* Style the back side */
+.flip-card-back {
+  background: radial-gradient(
+    circle,
+    #0dbb07,
+    #16b029,
+    #21a639,
+    #2b9b44,
+    #34904c
+  );
+  color: black;
+  rotate: -5deg;
+  transform: rotateY(180deg);
+  box-shadow: rgb(30, 255, 0) 0px 3px 8px;
+  border-radius: 15px;
+}
+
+.flip-card-trap-front {
   background: radial-gradient(
     circle,
     #ec0808,
@@ -160,8 +220,26 @@
     #aa2c3e,
     #903444
   );
-  rotate: -5deg;
   box-shadow: rgb(255, 0, 0) 0px 3px 8px;
+  color: black;
+  border-radius: 15px;
+}
+
+/* Style the back side */
+.flip-card-trap-back {
+  background: radial-gradient(
+    circle,
+    #ec0808,
+    #d91325,
+    #c22134,
+    #aa2c3e,
+    #903444
+  );
+  rotate: 2deg;
+  box-shadow: rgb(255, 0, 0) 0px 3px 8px;
+  color: black;
+  transform: rotateY(180deg);
+  border-radius: 15px;
 }
 
 .roll {
