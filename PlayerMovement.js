@@ -1,4 +1,4 @@
-let playerPosition = 0; // starting point for the player on the game board.
+// let playerPosition = 0; // starting point for the player on the game board.
 
 
 // Function to roll the dice and move the player
@@ -28,8 +28,7 @@ const randomDice = () => {
 
 // Functions to move player
 function movePlayer(steps) {
-    playerPosition = calculateNextPosition(playerPosition, steps); // Update players postiion depending on dice roll value
-    handlePlayerPosition();
+  movePlayer(playerPosition, steps);
 
 
 }
