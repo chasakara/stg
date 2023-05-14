@@ -863,3 +863,92 @@ cursor: pointer;
 											  transparent,
 											  transparent)
 }
+
+/* Planets Page */
+
+.planets-container {
+  position: relative;
+}
+
+.planets-image {
+  width: 100%;
+  height: 100vh;
+  position:absolute;
+  background-image: url("https://imgur.com/3iTa8Pe.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  font-family: "Trade Gothic LT Std", sans-serif;
+  font-weight: bolder;
+}
+
+.planets-wrapper {
+  width: 100%;
+}
+
+.endor {
+  width: 430px;
+  height: 413px;
+  position: absolute;
+  bottom: 0;
+  display: block;
+  border-radius: 50%;
+  margin: 0 0 20px 38%;
+}
+
+.tatooine {
+  width: 291px;
+  height: 260px;
+  position: absolute;
+  bottom: 0;
+  display: block;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  margin: 5.8% 0 22.5% 66%;
+}
+
+.tatooine {
+  position: relative;
+}
+
+.tatooine:before, .dagobah:before  {
+  content: attr(data-hover);
+  width: 180px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgb(255, 0, 0);
+  color: #fff;
+  text-align: center;
+  font-size: 28px;
+  border-radius: 5px;
+  transition: opacity 1s ease-in-out;
+
+  padding: 10px 0;
+  margin: 90% 0 0 18%;
+  z-index: 1;
+}
+
+.dagobah:before {
+  margin: 100% 0 0 -7%;
+}
+
+.tatooine:hover:before, .dagobah:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dagobah {
+  width: 155px;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  margin: 0 0 0 17%;
+}
