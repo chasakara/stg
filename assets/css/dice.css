@@ -26,8 +26,8 @@ body {
 /* Dice One */
 .diceOne {
     position: relative;
-    width: 108px;
-    height: 108px;
+    width: 100px;
+    height: 100px;
     margin: 5px;
     transform-style: preserve-3d;
     transition: 1s ease;
