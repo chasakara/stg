@@ -9,7 +9,7 @@
   color: #2c4eaa;
   font-size: 40px;
   text-shadow: 0 0 7px rgb(0, 89, 255);
-  margin: 10px 8px;
+  margin: 10px 40px 10px 20px;
 }
 
 .game-container {
@@ -113,7 +113,7 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: -70px;
   margin-left: 10px;
 }
 
@@ -391,7 +391,7 @@ i {
 .liberate-card-stack {
   top: 30px;
   position: relative;
-  margin-top: 30px;
+  margin-top: -10px;
   margin-bottom: 70px;
   rotate: 5deg;
   background-image: url("https://imgur.com/4UsQqRa.png");
@@ -804,7 +804,6 @@ footer a:hover {
   width: 50%;
   max-height: 57vh;
   position: relative;
-  text-align: center;
   font-size: 14pt;
   color: #000;
   background-color: #fefefe;
@@ -816,9 +815,14 @@ footer a:hover {
 }
 
 .modal-content h2 {
+  text-align: center;
   font-size: 44px;
   padding: 10px 0 25px 0;
 }
+
+.modal-content h3 {
+  margin-top: 20px;
+  }
 
 .close {
   position: absolute;
@@ -951,4 +955,8 @@ cursor: pointer;
   background-color: rgba(0,0,0,0.5);
   border-radius: 50%;
   margin: 0 0 0 17%;
+}
+
+.position.active{
+  background: white;
 }
