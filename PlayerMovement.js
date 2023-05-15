@@ -172,7 +172,7 @@ function movePlayer(playerPosition, steps) {
 
 function playTurn(player) {
   console.log(`It's ${player.name}'s turn.`);
-  const steps = diceResult;
+  const steps = diceResult();
   console.log(`${player.name} rolled ${steps}`);
   movePlayer(playerPosition, steps);
   console.log(
