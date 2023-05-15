@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path to the Jedi Order</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/settings.css">
+    <link href="https://fonts.cdnfonts.com/css/trade-gothic-lt-std" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ed532fafaf.js" crossorigin="anonymous"></script>
+</head>
+<!-- Each Individual Div classifies as one cell  -->
+
+<body>
+    <div class="game-container">
+        <header>
+            <div>
+                <a href="index.html"><i class="fas fa-home"></i></a>
+            </div>
+            <!-- THE START OF SETTINGS MENU -->
+            <a href="#" class="settingsBtn modal-btn">
+                <i class="fas fa-cog"></i>
+            </a>
+            <fieldset class="settings-wrapper modal" id="settings">
+                <legend><i class="fas fa-cog"></i></legend>
+                <div class="settingBtns">
+                    <div class="settingBtnborder">
+                        <button class="btnControls music" id="musicBtnOff">
+                            <i class="fas fa-pause"></i>
+                        </button>
+                        <button class="btnControls music" id="musicBtnOn">
+                            <i class="fas fa-music"></i>
+                        </button>
+                    </div>
+                    <div class="settingBtnborder">
+                        <button class="sound btnControls" onclick="endMute()" id="soundBtnOff">
+                            <i class="fas fa-volume-mute"></i>
+                        </button>
+                        <button class="sound btnControls" onclick="startMute()" id="soundBtnOn">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                    <div class="rules-wrapper">
+                        <a href="#rules-modal" id="rules-btn" class="btn modal-btn rules-btn">Rules</a>
+                    </div>
+                </div>
+                <a href="#" class="close" id="closeSettings"><i class="fas fa-times"></i></a>
+            </fieldset>
+        </header>
+        <!-- The Rules Modal -->
+        <div id="rules-modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Rules</h2>
+                <div>
+                    <h3>Object of the Game:</h3>
+                    <p>The first player to get to the Rebel Alliance base is the winner.</p>
+
+                    <h3>Game Setup:</h3>
+                    <p>The game board must be set up in a way that all players can view it.</p>
+
+                    <h3>Turn-Based Gameplay:</h3>
+                    <p>The game is turn-based, with each player taking a turn to make a move. The order of play can be
+                        determined randomly, by age or a real life lightsaber battle.</p>
+
+                    <h3>Movement:</h3>
+                    <p>Players roll the dice, and their game pieces will move according to the rules of the game.</p>
+
+                    <h3>Chance:</h3>
+                    <p>If a player lands on a coloured tile they will be given a corresponding card - either a Force
+                        Card (good) or a Trap Card (bad) &amp; have to reap the reward or take the punishment.</p>
+
+                    <h3>Game End:</h3>
+                    <p>The game ends when with the first player reaching the Rebel Alliance base.</p>
+                </div>
+            </div>
+        </div>
+        <div class="board">
+            <div class="parent">
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <div class="div3"> </div>
+                <div class="field div4" id="position-38">38</div>
+                <div class="field red div5" id="position-39">39</div>
+                <div class="field div6" id="position-40">40</div>
+                <div class="div7"> </div>
+                <div class="div8"> </div>
+                <div class="div9"> </div>
+                <div class="div10"> </div>
+                <div class="div11"> </div>
+                <div class="div12"> </div>
+                <div class="div13"> </div>
+                <div class="div14"> </div>
+                <div class="div15"> </div>
+                <div class="div16"> </div>
+                <div class="field div17" id="position-34">34</div>
+                <div class="field div18" id="position-35">35</div>
+                <div class="field div19" id="position-36">36</div>
+                <div class="field div20" id="position-37">37</div>
+                <div class="div21"> </div>
+                <div class="field div22" id="position-41">41</div>
+                <div class="div23"> </div>
+                <div class="div24"> </div>
+                <div class="field div25" id="position-46">46</div>
+                <div class="field div26" id="position-47">47</div>
+                <div class="field div27" id="position-48">48</div>
+                <div class="field div28" id="position-49">49 </div>
+                <div class="div29"> </div>
+                <div class="div30"> </div>
+                <div class="div31"> </div>
+                <div class="div32"> </div>
+                <div class="field green div33" id="position-33">33</div>
+                <div class="div34"> </div>
+                <div class="div35"> </div>
+                <div class="div36"> </div>
+                <div class="div37"> </div>
+                <div class="field div38" id="position-42">42</div>
+                <div class="field div39" id="position-43">43</div>
+                <div class="field green div40" id="position-44">44</div>
+                <div class="field div41" id="position-45">45</div>
+                <div class="div42"> </div>
+                <div class="div43"> </div>
+                <div class="field div44" id="position-50">50</div>
+                <div class="div45"> </div>
+                <div class="div46"> </div>
+                <div class="div47"> </div>
+                <div class="div48"> </div>
+                <div class="field div49" id="position-32">32</div>
+                <div class="field div50" id="position-31">31</div>
+                <div class="div51"> </div>
+                <div class="div52"> </div>
+                <div class="div53"> </div>
+                <div class="div54"> </div>
+                <div class="div55"> </div>
+                <div class="div56"> </div>
+                <div class="div57"> </div>
+                <div class="field red div58" id="position-53">53</div>
+                <div class="field div59" id="position-52">52</div>
+                <div class="field div60" id="position-51">51</div>
+                <div class="field offroad div61" id="position-62">62</div>
+                <div class="field offroad red div62" id="position-63">63</div>
+                <div class="field offroad div63" id="position-64">64</div>
+                <div class="field offroad div64" id="position-65">65</div>
+                <div class="div65"> </div>
+                <div class="field div66" id="position-30">30</div>
+                <div class="div67"> </div>
+                <div class="div68"> </div>
+                <div class="field red div69" id="position-84">84</div>
+                <div class="field div70" id="position-83">83</div>
+                <div class="field div71" id="position-82">82</div>
+                <div class="div72"> </div>
+                <div class="div73"> </div>
+                <div class="field div74" id="position-54">54</div>
+                <div class="div75"> </div>
+                <div class="div76"> </div>
+                <div class="div77"></div>
+                <div class="div78"></div>
+                <div class="div79"></div>
+                <div class="field offroad div80" id="position-66">66</div>
+                <div class="div81"></div>
+                <div class="field div82" id="position-29">29</div>
+                <div class="div83"></div>
+                <div class="field div84" id="position-86">86</div>
+                <div class="field green div85" id="position-85">85</div>
+                <div class="div86"></div>
+                <div class="field green div87" id="position-81">81</div>
+                <div class="div88"></div>
+                <div class="div89"></div>
+                <div class="field div90" id="position-55">55</div>
+                <div class="field div91" id="position-56">56</div>
+                <div class="div92"> </div>
+                <div class="div93"> </div>
+                <div class="div94"> </div>
+                <div class="div95"> </div>
+                <div class="field red offroad div96" id="position-67">67</div>
+                <div class="field div97" id="position-27">27</div>
+                <div class="field div98" id="position-28">28</div>
+                <div class="div99"> </div>
+                <div class="field div100" id="position-87">87</div>
+                <div class="div101"> </div>
+                <div class="div102"> </div>
+                <div class="field div103" id="position-80">80</div>
+                <div class="div104"> </div>
+                <div class="div105"> </div>
+                <div class="div106"> </div>
+                <div class="field green div107" id="position-57">57</div>
+                <div class="field div108" id="position-58">58</div>
+                <div class="field div109" id="position-59">59</div>
+                <div class="field div110" id="position-60">60</div>
+                <div class="field div111" id="position-61">61</div>
+                <div class="field offroad div112" id="position-68">68</div>
+                <div class="field red div113" id="position-26">26</div>
+                <div class="div114"> </div>
+                <div class="div115"> </div>
+                <div class="field div116" id="position-88">88</div>
+                <div class="field red offroad div117" id="position-90">90</div>
+                <div class="field red offroad div118" id="position-89">89</div>
+                <div class="field div119" id="position-79">79</div>
+                <div class="field div120" id="position-78">78</div>
+                <div class="field div121" id="position-77">77</div>
+                <div class="field div122" id="position-76">76</div>
+                <div class="div123"> </div>
+                <div class="div124"> </div>
+                <div class="div125"> </div>
+                <div class="div126"> </div>
+                <div class="field div127" id="position-69">69</div>
+                <div class="div128"> </div>
+                <div class="field div129" id="position-25">25</div>
+                <div class="div130"> </div>
+                <div class="div131"> </div>
+                <div class="field div132" id="position-91">91</div>
+                <div class="div133"> </div>
+                <div class="div134"> </div>
+                <div class="div135"> </div>
+                <div class="div136"> </div>
+                <div class="div137"> </div>
+                <div class="field div138" id="position-75">75</div>
+                <div class="field div139" id="position-74">74</div>
+                <div class="field div140" id="position-73">73</div>
+                <div class="field div141" id="position-72">72</div>
+                <div class="field div143" id="position-70">70</div>
+                <div class="field div142" id="position-71">71</div>
+                <div class="div144"> </div>
+                <div class="field div145" id="position-24">24</div>
+                <div class="div146"> </div>
+                <div class="div147"> </div>
+                <div class="field div148" id="position-92">92</div>
+                <div class="field div149" id="position-93">93</div>
+                <div class="field div150" id="position-94">94</div>
+                <div class="field red div151" id="position-95">95</div>
+                <div class="field div152" id="position-96">96</div>
+                <div class="field div153" id="position-97">97</div>
+                <div class="div154"> </div>
+                <div class="div155"> </div>
+                <div class="div156"> </div>
+                <div class="div157"> </div>
+                <div class="div185"> </div>
+                <div class="div159"> </div>
+                <div class="div160"> </div>
+                <div class="field div161" id="position-23">23</div>
+                <div class="field div162" id="position-22">22</div>
+                <div class="div163"> </div>
+                <div class="div164"> </div>
+                <div class="div165"> </div>
+                <div class="div166"> </div>
+                <div class="div167"> </div>
+                <div class="div168"> </div>
+                <div class="field green div169" id="position-98">98</div>
+                <div class="field div170" id="position-99">99</div>
+                <div class="field div171" id="position-100">100</div>
+                <div class="field div172" id="position-101">101</div>
+                <div class="div173"> </div>
+                <div class="div174"> </div>
+                <div class="div175"> </div>
+                <div class="div176"> </div>
+                <div class="div177"> </div>
+                <div class="field div178" id="position-21">21</div>
+                <div class="field div179" id="position-20">20</div>
+                <div class="div172"> </div>
+                <div class="field div180" id="position-11">11</div>
+                <div class="field red div181" id="position-10">10</div>
+                <div class="field div182" id="position-9">9</div>
+                <div class="field div183" id="position-8">8</div>
+                <div class="div184"> </div>
+                <div class="div185"> </div>
+                <div class="div186"> </div>
+                <div class="field div187" id="position-102">102</div>
+                <div class="field div188" id="position-103">103</div>
+                <div class="field red div189" id="position-104">104</div>
+                <div class="field div190" id="position-105">105</div>
+                <div class="field div191" id="position-106">106</div>
+                <div class="div192"> </div>
+                <div class="div193"> </div>
+                <div class="field red div194" id="position-14">14</div>
+                <div class="field div195" id="position-13">13</div>
+                <div class="field div196" id="position-12">12</div>
+                <div class="div197"> </div>
+                <div class="div198"> </div>
+                <div class="field green div199" id="position-7">7</div>
+                <div class="div200"> </div>
+                <div class="div201"> </div>
+                <div class="div202"> </div>
+                <div class="field red offroad div203" id="position-112">112</div>
+                <div class="div204"> </div>
+                <div class="div205"> </div>
+                <div class="div206"> </div>
+                <div class="field green div207" id="position-107">107</div>
+                <div class="div208"> </div>
+                <div class="div209"> </div>
+                <div class="field red offroad div210" id="position-19">19</div>
+                <div class="div211"> </div>
+                <div class="div212"> </div>
+                <div class="div213"> </div>
+                <div class="div214"> </div>
+                <div class="field div215" id="position-6">6</div>
+                <div class="div216"> </div>
+                <div class="div217"> </div>
+                <div class="field offroad div218" id="position-114">114</div>
+                <div class="field offroad div219" id="position-113">113</div>
+                <div class="div220"> </div>
+                <div class="div221"> </div>
+                <div class="div222"> </div>
+                <div class="field div223" id="position-108">108</div>
+                <div class="div224"> </div>
+                <div class="div225"> </div>
+                <div class="field offroad div226" id="position-18">18</div>
+                <div class="field red offroad div227" id="position-17">17</div>
+                <div class="div228"> </div>
+                <div class="div229"> </div>
+                <div class="field green div230" id="position-4">4</div>
+                <div class="field div231" id="position-5">5</div>
+                <div class="div232"> </div>
+                <div class="div233"> </div>
+                <div class="field offroad div234" id="position-115">115</div>
+                <div class="div235"> </div>
+                <div class="div236"> </div>
+                <div class="div237"> </div>
+                <div class="field div238" id="position-110">110</div>
+                <div class="field div239" id="position-109">109</div>
+                <div class="div240"> </div>
+                <div class="div241"> </div>
+                <div class="div242"> </div>
+                <div class="field offroad div243" id="position-16">16</div>
+                <div class="div244"> </div>
+                <div class="div245"> </div>
+                <div class="field div246" id="position-3">3</div>
+                <div class="div247"> </div>
+                <div class="div248"> </div>
+                <div class="div249"> </div>
+                <div class="field green offroad div250" id="position-116">116</div>
+                <div class="field offroad div251" id="position-117">117</div>
+                <div class="field offroad div252" id="position-118">118</div>
+                <div class="field offroad div253" id="position-119">119</div>
+                <div class="field red div254" id="position-111">111</div>
+                <div class="div255"> </div>
+                <div class="div256"> </div>
+                <div class="div257"> </div>
+                <div class="div258"> </div>
+                <div class="field offroad div259" id="position-15">15</div>
+                <div class="field div260 position" id="position-0">Start<i class="fa-solid fa-jedi fa-beat"
+                        style="color: #ffffff;"></i>
+                </div>
+                <div class="field div261" id="position-1">1</div>
+                <div class="field div262" id="position-2">2</div>
+                <div class="div263"></div>
+                <div class="div264"></div>
+                <div class="div265"></div>
+                <div class="div266"></div>
+                <div class="div267"></div>
+                <div class="div268"></div>
+                <div class="div269"></div>
+                <div class="field div270" id="position-120">End <i class="fa-solid fa-flag-checkered fa-flip"
+                        style="color: #ffffff;"></i>
+                </div>
+                <div class="div271"> </div>
+
+
+            </div>
+        </div>
+        <div class="game-items center-flex">
+            <div>
+                <div>
+                    <div class="dice">
+                        <div class="dice-wrapper center-flex">
+                            <div class="diceOne">
+                                <div class="faceOne frontOne"></div>
+                                <div class="faceOne backOne"></div>
+                                <div class="faceOne topOne"></div>
+                                <div class="faceOne bottomOne"></div>
+                                <div class="faceOne leftOne"></div>
+                                <div class="faceOne rightOne"></div>
+                            </div>
+                            <div class="diceTwo">
+                                <div class="faceTwo frontTwo"></div>
+                                <div class="faceTwo backTwo"></div>
+                                <div class="faceTwo topTwo"></div>
+                                <div class="faceTwo bottomTwo"></div>
+                                <div class="faceTwo leftTwo"></div>
+                                <div class="faceTwo rightTwo"></div>
+                            </div>
+                            <div class="result">
+                                <p>You rolled <span id="result-number"></span>!</p>
+                            </div>
+
+                            <button class="roll box--gradient silver">
+                                <span class="shadow"></span>
+                                <span class="edge"></span>
+                                <span class="front text"><i class="fa-solid fa-circle fa-beat-fade"
+                                        style="color: #ff0000;"></i> - Roll Dice - <i
+                                        class="fa-solid fa-circle fa-beat-fade" style="color: #ff0000;"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="center-flex">
+
+                </div>
+            </div>
+            <div>
+                <div class="flip-card card-stack liberate-card-stack">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front card-front">
+                        </div>
+                        <div class="flip-card-back card-back">
+                            <h1>Back</h1>
+                            <p>Content</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card card-stack trap-card-stack">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-trap-front card-front">
+                        </div>
+                        <div class="flip-card-trap-back card-back">
+                            <h1>Back</h1>
+                            <p>Content</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <footer>
+        <p>&copy; Jar Jar Jarverscripters May 2023</p>
+        <span>&diams; Tinashe</span>
+        <span><a href="https://github.com/Ant2210" target="_blank">&diams; Ant_4P</a></span></span>
+        <span><a href="https://www.linkedin.com/in/rhys-pegrume-15b94a23b/" target="_blank">&diams; Rhys
+                Pegrume</a></span>
+        <span><a href="https://www.linkedin.com/in/siobhan-o-brien/" target="_blank">&diams; Siobhan O'Brien</a></span>
+        <span><a href="https://www.linkedin.com/in/anthony-radose-35a969236/" target="_blank">&diams; Anthony
+                Radose</a></span>
+        <span><a href="https://www.linkedin.com/in/christopher-grabham-07778a266/" target="_blank">&diams; Christopher
+                Grabham</a></span>
+        <span><a href="https://www.linkedin.com/in/joe-playdon-882a58231/" target="_blank">&diams; Joe
+                Playdon</a></span>
+        <span><a href="https://www.linkedin.com/in/mia-rasmussen-088091226/" target="_blank">&diams; Mia
+                Rasmussen</a></span>
+    </footer>
+
+    <script src="PlayerMovement.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/sound.js"></script>
+</body>
+
+</html>
