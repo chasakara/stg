@@ -1,4 +1,4 @@
-// let playerPosition = 0; // starting point for the player on the game board.
+// let playerPosition = 17; // starting point for the player on the game board.
 
 // Function to roll the dice and move the player
 const diceOne = document.querySelector(".diceOne");
@@ -152,17 +152,15 @@ for (let i = 1; i <= numberOfPlayers; i++) {
 }
 
 // Function to determine player order:
-function determinePlayerOrder() {
-  // Roll a random dice and return the result
-  function rollDice() {
-    return Math.floor(Math.random() * 6) + 1;
-  }
-  players.forEach((player) => {
-    playerPosition = 0; // Set the initial position to 0 for each player
-    player.initialRoll = rollDice();
-  });
-  players.sort((a, b) => b.initialRoll - a.initialRoll);
-}
+// function determinePlayerOrder() {
+//   // Roll a random dice and return the result
+
+//   players.forEach((player) => {
+//     playerPosition = 0; // Set the initial position to 0 for each player
+//     player.initialRoll = randomDice();
+//   });
+//   players.sort((a, b) => b.initialRoll - a.initialRoll);
+// }
 
 // added move player function here
 function movePlayer(playerPosition, steps) {
@@ -171,8 +169,11 @@ function movePlayer(playerPosition, steps) {
 }
 
 function playTurn(player) {
-  console.log(`It's ${player.name}'s turn.`);
-  const steps = diceResult();
+  const promptMessage = `It's ${player.name}'s turn. Click OK to roll dice`;
+  let steps = 0;
+  if (confirm(promptMessage)) {
+    steps += Math.floor(Math.random() * 6 + 1);
+  }
   console.log(`${player.name} rolled ${steps}`);
   movePlayer(playerPosition, steps);
   console.log(
@@ -182,7 +183,7 @@ function playTurn(player) {
 }
 
 // Determine player order at start of  game
-determinePlayerOrder();
+// determinePlayerOrder();
 
 players.forEach((player) => {
   playTurn(player);
