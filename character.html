@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path to the Jedi Order</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/settings.css">
+    <link href="https://fonts.cdnfonts.com/css/trade-gothic-lt-std" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ed532fafaf.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="characters-container">
+            <div class="character-img">
+                <header>
+                    <div><a href="home.html"><i class="fas fa-home"></i></a></div>
+                    <!-- THE START OF SETTINGS MENU -->
+                    <a href="#" class="settingsBtn modal-btn">
+                        <i class="fas fa-cog"></i>
+                    </a>
+                    <fieldset class="settings-wrapper modal" id="settings">
+                        <legend><i class="fas fa-cog"></i></legend>
+                        <div class="settingBtns">
+                            <div class="settingBtnborder">
+                                <button class="btnControls music" id="musicBtnOff">
+                                    <i class="fas fa-pause"></i>
+                                </button>
+                                <button class="btnControls music" id="musicBtnOn">
+                                    <i class="fas fa-music"></i>
+                                </button>
+                            </div>
+                            <div class="settingBtnborder">
+                                <button class="sound btnControls" onclick="endMute()" id="soundBtnOff">
+                                    <i class="fas fa-volume-mute"></i>
+                                </button>
+                                <button class="sound btnControls" onclick="startMute()" id="soundBtnOn">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <a href="#" class="close" id="closeSettings"><i
+                            class="fas fa-times"></i></a>
+                    </fieldset>
+                </header>
+                <div class="characters-wrapper-top">
+                    <h1>Ready to Choose?</h1>
+                </div>
+                <div class="second-wrapper">
+                    <div class="character-names">
+                        <p class="first">Chewbacca</p>
+                        <p class="second">C-3PO</p>
+                        <p class="third">R2-D2</p>
+                        <p class="forth">Sith Lord Jar Jar</p>
+                    </div>
+                </div>
+                <div class="character-background">
+                    <img class="Chewbacca" src="https://imgur.com/8qY5461.png" alt="">
+                    <img class="C-3PO" src="https://imgur.com/aYB2McN.png" alt="">
+                    <img class="R2-D2" src="https://imgur.com/HuRQ2lv.png" alt="">
+                    <img class="Jar-jar" src="https://imgur.com/cLAb2XW.png" alt="">
+                </div>
+                <div class="characters-wrapper-bottom"></div>
+            </div>
+
+        <script src="/assets/js/script.js"></script>
+    </div>
+</body>
+
+</html>

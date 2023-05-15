@@ -960,3 +960,93 @@ cursor: pointer;
 .position.active{
   background: white;
 }
+
+/* Character Page */
+
+.characters-container {
+  position: relative;
+}
+
+.character-img {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://imgur.com/lMj3yI3.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  font-family: "Trade Gothic LT Std", sans-serif;
+  font-weight: bolder;
+}
+
+.characters-wrapper-top {
+  width: 60%;
+  height: 15vh;
+  text-align: center;
+  font-size: 40px;
+  background-image: linear-gradient(to bottom right, #a5a5a5, #dadada, #dadada, #ececec, #f7f7f7, #b9b9b9, #919191);
+  padding-top: 1%;
+  margin: 0 auto;
+}
+
+.second-wrapper {
+  width: 75%;
+  height: 10vh;
+  background-image: linear-gradient(to bottom right, #a5a5a5, #dadada, #dadada, #ececec, #f7f7f7, #b9b9b9, #919191);
+  margin: 0 auto;
+}
+
+.character-names {
+  width: 100%;
+  display: inline-flex;
+}
+
+.character-names p {
+  font-size: 30px;
+  padding: 2% 4%;
+}
+
+.first {
+  margin-left: 160px;
+}
+
+.second {
+  margin-left: 80px;
+}
+
+.third {
+  margin-left: 100px;
+}
+
+.forth {
+  margin-left: 50px;
+}
+
+.character-background {
+  width: 60%;
+  height: 55vh;
+  background-image: linear-gradient(to bottom right, #a5a5a5, #dadada, #dadada, #ececec, #f7f7f7, #b9b9b9, #919191);
+  margin: 0 auto;
+}
+
+.character-background img {
+  padding: 1.3%;
+  margin-top: 65px;
+}
+
+.Chewbacca, .C-3PO, .Jar-jar {
+  width: 250px;
+  height: 450px;
+}
+
+.R2-D2 {
+  width: 250px;
+  height: 350px;
+}
+
+.characters-wrapper-bottom {
+  width: 65%;
+  height: 8vh;
+  background-image: linear-gradient(to bottom right, #a5a5a5, #dadada, #dadada, #ececec, #f7f7f7, #b9b9b9, #919191);
+  margin: 0 auto;
+}
