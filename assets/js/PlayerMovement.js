@@ -464,6 +464,8 @@ function handlePlayerPosition(playerPosition) {
   
     if (randomAction.includes("Move back")) {
       const steps = parseInt(randomAction.match(/\d+/)[0], 10);
+      
+
       playerPosition -= steps;
     }
   }
