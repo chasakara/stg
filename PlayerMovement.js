@@ -425,6 +425,10 @@ function handlePositiveAction() {
     "You witnessed a traditional Ewok tribal dance. Move forward 2 steps.",
     "You received the honor of being named an honorary Ewok. Move forward 4 steps.",
   ];
+  forceCard.playbackRate = 1;
+  forceCard.play();
+  forceCard.currentTime = 0;
+
 
   const randomAction =
     positiveActions[Math.floor(Math.random() * positiveActions.length)];
@@ -460,6 +464,9 @@ function handleNegativeAction() {
     "You got caught in an Ewok log trap. Move back 2 steps.",
     "You stumbled upon a forbidden Ewok sacred site. Move back 4 steps.",
   ];
+  trapCard.playbackRate = 1;
+  trapCard.play();
+  trapCard.currentTime = 0;
 
   const randomAction =
     negativeActions[Math.floor(Math.random() * negativeActions.length)];
@@ -551,6 +558,11 @@ function calculateNextPosition(currentPosition, steps) {
     if (nextPosition > 120) {
       nextPosition = 120;
     }
+    console.log("Congrats!!! You have won the game!!!")
+    winSound.playbackRate = 1;
+    winSound.play();
+    winSound.currentTime = 0;
+    
   }
 
   return nextPosition;

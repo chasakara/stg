@@ -134,7 +134,7 @@ legend i {
 
 #musicBtnOn, #soundBtnOn  {
     display: none;
-    margin: 4.5px 0 15% 77.5%;
+    margin: 4.5px 0 15% 82%;
 }
 
 #soundBtnOff {
@@ -164,11 +164,11 @@ legend i {
 }
 
 #musicBtnOn i {
-    padding: 17% 4% 0 0;
+    padding: 17% 25% 0 0;
 }
 
 #soundBtnOn i{
-    padding: 18% 0 0 15%;
+    padding: 18% 19% 0 0;
 }
 
 .settings-wrapper .close {
