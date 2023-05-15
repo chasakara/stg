@@ -1,6 +1,6 @@
 #  ![Logo](docs/logo.png)
 
-#### ![logo](./favicon.ico)Live Site : https://chaskara.github.io/stg/
+#### ![logo](./favicon.ico)Live Site : [https://chaskara.github.io/stg/](https://chasakara.github.io/stg/)
 
 ## ![logo](./favicon.ico)Introduction
 An online board called **Path to the Jedi Order** was developed by the **Jar Jar Jarverscripters** team during the weekend of the Star Wars Hackathon in May 2023.  We present a traditional multiplayer board game with 120 tiles, double dice, 2 types of chance cards & some surprise shortcuts along the way. This is our main board (without background) & we hope you enjoy playing it as much as we did building it!
