@@ -9,104 +9,102 @@ let diceTwoResult;
 let diceResult;
 
 const randomDice = () => {
-    const randomOne = Math.floor(Math.random() * 6 + 1);
-    const randomTwo = Math.floor(Math.random() * 6 + 1);
-    rollDiceOne(randomOne);
-    rollDiceTwo(randomTwo);
+  const randomOne = Math.floor(Math.random() * 6 + 1);
+  const randomTwo = Math.floor(Math.random() * 6 + 1);
+  rollDiceOne(randomOne);
+  rollDiceTwo(randomTwo);
 };
 
 const rollDiceOne = (randomOne) => {
-    diceOne.classList.add("rolling-animation");
+  diceOne.classList.add("rolling-animation");
 
-    setTimeout(() => {
-        switch (randomOne) {
-            case 1:
-                diceOne.style.transform = "rotateX(0deg) rotateY(0deg)";
-                diceOneResult = 1;
-                break;
+  setTimeout(() => {
+    switch (randomOne) {
+      case 1:
+        diceOne.style.transform = "rotateX(0deg) rotateY(0deg)";
+        diceOneResult = 1;
+        break;
 
-            case 6:
-                diceOne.style.transform = "rotateX(180deg) rotateY(0deg)";
-                diceOneResult = 6;
-                break;
+      case 6:
+        diceOne.style.transform = "rotateX(180deg) rotateY(0deg)";
+        diceOneResult = 6;
+        break;
 
-            case 2:
-                diceOne.style.transform = "rotateX(-90deg) rotateY(0deg)";
-                diceOneResult = 2;
-                break;
+      case 2:
+        diceOne.style.transform = "rotateX(-90deg) rotateY(0deg)";
+        diceOneResult = 2;
+        break;
 
-            case 5:
-                diceOne.style.transform = "rotateX(90deg) rotateY(0deg)";
-                diceOneResult = 5;
-                break;
+      case 5:
+        diceOne.style.transform = "rotateX(90deg) rotateY(0deg)";
+        diceOneResult = 5;
+        break;
 
-            case 3:
-                diceOne.style.transform = "rotateX(0deg) rotateY(90deg)";
-                diceOneResult = 3;
-                break;
+      case 3:
+        diceOne.style.transform = "rotateX(0deg) rotateY(90deg)";
+        diceOneResult = 3;
+        break;
 
-            case 4:
-                diceOne.style.transform = "rotateX(0deg) rotateY(-90deg)";
-                diceOneResult = 4;
-                break;
+      case 4:
+        diceOne.style.transform = "rotateX(0deg) rotateY(-90deg)";
+        diceOneResult = 4;
+        break;
 
-            default:
-                break;
-        }
+      default:
+        break;
+    }
 
-        diceOne.classList.remove("rolling-animation");
-    }, 1050);
+    diceOne.classList.remove("rolling-animation");
+  }, 1050);
 };
 
 const rollDiceTwo = (randomTwo) => {
-    diceTwo.classList.add("rolling-animation");
+  diceTwo.classList.add("rolling-animation");
 
-    setTimeout(() => {
-        switch (randomTwo) {
-            case 1:
-                diceTwo.style.transform = "rotateX(0deg) rotateY(0deg)";
-                diceTwoResult = 1;
-                break;
+  setTimeout(() => {
+    switch (randomTwo) {
+      case 1:
+        diceTwo.style.transform = "rotateX(0deg) rotateY(0deg)";
+        diceTwoResult = 1;
+        break;
 
-            case 6:
-                diceTwo.style.transform = "rotateX(180deg) rotateY(0deg)";
-                diceTwoResult = 6;
-                break;
+      case 6:
+        diceTwo.style.transform = "rotateX(180deg) rotateY(0deg)";
+        diceTwoResult = 6;
+        break;
 
-            case 2:
-                diceTwo.style.transform = "rotateX(-90deg) rotateY(0deg)";
-                diceTwoResult = 2;
-                break;
+      case 2:
+        diceTwo.style.transform = "rotateX(-90deg) rotateY(0deg)";
+        diceTwoResult = 2;
+        break;
 
-            case 5:
-                diceTwo.style.transform = "rotateX(90deg) rotateY(0deg)";
-                diceTwoResult = 5;
-                break;
+      case 5:
+        diceTwo.style.transform = "rotateX(90deg) rotateY(0deg)";
+        diceTwoResult = 5;
+        break;
 
-            case 3:
-                diceTwo.style.transform = "rotateX(0deg) rotateY(90deg)";
-                diceTwoResult = 3;
-                break;
+      case 3:
+        diceTwo.style.transform = "rotateX(0deg) rotateY(90deg)";
+        diceTwoResult = 3;
+        break;
 
-            case 4:
-                diceTwo.style.transform = "rotateX(0deg) rotateY(-90deg)";
-                diceTwoResult = 4;
-                break;
+      case 4:
+        diceTwo.style.transform = "rotateX(0deg) rotateY(-90deg)";
+        diceTwoResult = 4;
+        break;
 
-            default:
-                break;
-        }
+      default:
+        break;
+    }
 
-        diceTwo.classList.remove("rolling-animation");
-        diceResult = diceOneResult + diceTwoResult;
-        document.querySelector(".result p").classList.add("display");
-        document.querySelector("#result-number").textContent = diceResult;
-    }, 1050);
-    
+    diceTwo.classList.remove("rolling-animation");
+    diceResult = diceOneResult + diceTwoResult;
+    document.querySelector(".result p").classList.add("display");
+    document.querySelector("#result-number").textContent = diceResult;
+  }, 1050);
 };
 
 rollBtn.addEventListener("click", randomDice);
-
 
 const players = []; // Initialize empty array to store selected players
 
@@ -180,7 +178,7 @@ function playTurn(player) {
   console.log(
     `${player.name} moved ${steps} steps and is now at position ${playerPosition}`
   );
-handlePlayerPosition()
+  handlePlayerPosition();
 }
 
 // Determine player order at start of  game
@@ -190,286 +188,270 @@ players.forEach((player) => {
   playTurn(player);
 });
 
-
-
-
-
-
-
 // function to handle player position
-function handlePlayerPosition(playerPosition) {
-  
-    const positionActions = {
-      
-    
+function handlePlayerPosition() {
+  randomDice();
+  const positionActions = {
+    //  logic for dice rolls at shortcut paths
+    0: function () {
+      // Handle action for position 0 (Starting point)
 
-      //  logic for dice rolls at shortcut paths
-      0: function () {
-        // Handle action for position 0 (Starting point)
+      alert(
+        "You have crash landed on the planet of Endor you must roll the dice to choose a path"
+      );
 
-        alert("You have crash landed on the planet of Endor you must roll the dice to choose a path");
+      if (diceResult > 6) {
+        alert("You rolled a total of", diceResult + ". take the shortcut!");
+        playerPosition = 15;
+      } else {
+        alert("You rolled a total of", diceResult + ". follow the path!");
 
-        if ( diceResult > 6) {
-          alert("You rolled a total of", diceResult + ". take the shortcut!");
-          playerPosition = 15;
-        } else {
-          alert("You rolled a total of", diceResult + ". follow the path!");
+        playerPosition = 1;
+      }
+    },
+    51: function () {
+      // Handle shortcut option for position 51
 
-          playerPosition = 1;
-        }
-      },
-      51: function () {
-        // Handle shortcut option for position 51
+      alert("you must roll the dice to choose a path");
 
-        alert("you must roll the dice to choose a path");
+      if (diceResult > 6) {
+        alert("You rolled a total of", diceResult + ". take the shortcut!");
+        playerPosition = 62;
+      } else {
+        alert("You rolled a total of", diceResult + ". follow the path!");
 
-        if ( diceResult > 6) {
-          alert("You rolled a total of", diceResult + ". take the shortcut!");
-          playerPosition = 62;
-        } else {
-          alert("You rolled a total of", diceResult + ". follow the path!");
+        playerPosition = 52;
+      }
+    },
+    70: function () {
+      // Handle shortcut option for position 70
 
+      alert("you must roll the dice to choose a path");
 
-          playerPosition = 52;
-        }
-      },
-      70: function () {
-        // Handle shortcut option for position 70
+      if (diceResult > 6) {
+        alert("You rolled a total of", diceResult + ". take the shortcut!");
+        playerPosition = 89;
+      } else {
+        alert("You rolled a total of", diceResult + ". follow the path!");
 
-        alert("you must roll the dice to choose a path");
+        playerPosition = 80;
+      }
+    },
+    102: function () {
+      // Handle shortcut option for position 102
 
-        if ( diceResult > 6) {
-          alert("You rolled a total of", diceResult + ". take the shortcut!");
-          playerPosition = 89;
-        } else {
-          alert("You rolled a total of", diceResult + ". follow the path!");
+      alert("you must roll the dice to choose a path");
 
-        
+      if (diceResult > 6) {
+        alert("You rolled a total of", diceResult + ". take the shortcut!");
+        playerPosition = 112;
+      } else {
+        alert("You rolled a total of", diceResult + ". follow the path!");
 
+        playerPosition = 103;
+      }
+    },
+    1: function () {
+      // Handle action for position 1
 
-          playerPosition = 80;
-        }
-      },
-      102: function () {
-        // Handle shortcut option for position 102
- 
-        alert("you must roll the dice to choose a path");
+      alert("You are on the right path");
+    },
 
-        if ( diceResult > 6) {
-          alert("You rolled a total of", diceResult + ". take the shortcut!");
-          playerPosition = 112;
-        } else {
-          alert("You rolled a total of", diceResult + ". follow the path!");
+    10: function () {
+      // Negative action for position 10
+      handleNegativeAction();
+    },
+    14: function () {
+      // Negative action for position 14
+      handleNegativeAction();
+    },
+    15: function () {
+      // beginning of shortcut
+      alert("You have taken the shortcut");
+    },
+    17: function () {
+      // Negative action for position 17
+      handleNegativeAction();
+    },
+    19: function () {
+      // Negative action for position 19
+      handleNegativeAction();
+    },
+    26: function () {
+      // Negative action for position 26
+      handleNegativeAction();
+    },
+    53: function () {
+      // Negative action for position 53
+      handleNegativeAction();
+    },
+    63: function () {
+      // Negative action for position 63
+      handleNegativeAction();
+    },
+    67: function () {
+      // Negative action for position 67
+      handleNegativeAction();
+    },
+    84: function () {
+      // Negative action for position 84
+      handleNegativeAction();
+    },
+    89: function () {
+      // Negative action for position 89
+      handleNegativeAction();
+    },
+    90: function () {
+      // Negative action for position 90
+      handleNegativeAction();
+    },
+    95: function () {
+      // Negative action for position 95
+      handleNegativeAction();
+    },
+    104: function () {
+      // Negative action for position 104
+      handleNegativeAction();
+    },
+    111: function () {
+      // Negative action for position 111
+      handleNegativeAction();
+    },
 
+    // Positive actions ...
 
-          playerPosition = 103;
-        }
-      },
-      1: function () {
-        // Handle action for position 1
+    4: function () {
+      // Positive action for position 4
+      handlePositiveAction();
+    },
+    7: function () {
+      // Positive action for position 7
+      handlePositiveAction();
+    },
+    33: function () {
+      //Positive action for position 33
+      handlePositiveAction();
+    },
 
-        alert("You are on the right path");
+    44: function () {
+      // Positive action for position 44
+      handlePositiveAction();
+    },
+    57: function () {
+      // Positive action for position 57
+      handlePositiveAction();
+    },
+    81: function () {
+      // Positive action for position 81
+      handlePositiveAction();
+    },
+    85: function () {
+      // Positive action for position 85
+      handlePositiveAction();
+    },
+    98: function () {
+      // Positive action for position 98
+      handlePositiveAction();
+    },
+    107: function () {
+      // Positive action for position 107
+      handlePositiveAction();
+    },
+    116: function () {
+      // Positive action for position 116
+      handlePositiveAction();
+    },
 
-        
-      },
-     
-      
-      10: function () {
-         // Negative action for position 10
-         handleNegativeAction();
-      },
-      14: function () {
-         // Negative action for position 14
-         handleNegativeAction();
-      },
-      15: function () {
-        // beginning of shortcut
-        alert("You have taken the shortcut");
-      },
-      17: function () {
-        // Negative action for position 17
-        handleNegativeAction();
-      },
-      19: function () {
-        // Negative action for position 19
-        handleNegativeAction();
-      },
-      26: function () {
-        // Negative action for position 26
-        handleNegativeAction();
-      },
-      53: function () {
-        // Negative action for position 53
-        handleNegativeAction();
-      },
-      63: function () {
-        // Negative action for position 63
-        handleNegativeAction();
-      },
-      67: function () {
-        // Negative action for position 67
-        handleNegativeAction();
-      },
-      84: function () {
-        // Negative action for position 84
-        handleNegativeAction();
-      },
-      89: function () {
-        // Negative action for position 89
-        handleNegativeAction();
-      },
-      90: function () {
-        // Negative action for position 90
-        handleNegativeAction();
-      },
-      95: function () {
-        // Negative action for position 95
-        handleNegativeAction();
-      },
-      104: function () {
-        // Negative action for position 104
-        handleNegativeAction();
-      },
-      111: function () {
-        // Negative action for position 111
-        handleNegativeAction();
-      },
-    
-      // Positive actions ...
-  
-      4: function () {
-        // Positive action for position 4
-        handlePositiveAction();
-      },
-      7: function () {
-        // Positive action for position 7
-        handlePositiveAction();
-      },
-      33: function () {
-        //Positive action for position 33
-        handlePositiveAction();
-      },
-  
-      44: function () {
-        // Positive action for position 44
-        handlePositiveAction();
-      },
-      57: function () {
-        // Positive action for position 57
-        handlePositiveAction();
-      },
-      81: function () {
-        // Positive action for position 81
-        handlePositiveAction();
-      },
-      85: function () {
-        // Positive action for position 85
-        handlePositiveAction();
-      },
-      98: function () {
-        // Positive action for position 98
-        handlePositiveAction();
-      },
-      107: function () {
-        // Positive action for position 107
-        handlePositiveAction();
-      },
-      116: function () {
-        // Positive action for position 116
-        handlePositiveAction();
-      },
-  
-      120: function () {
-        alert("Congratulations! You've become a Jedi Master and saved the galaxy!");
-      },
-    };
-  
-    const currentPosition = document.querySelector(".position.active");
-    currentPosition.classList.remove("active");
-    // Get the new position element and add the "active" class to it
-    const newPosition = document.getElementById("position-" + playerPosition);
-    newPosition.classList.add("active");
-    if (positionActions[playerPosition]) {
-      positionActions[playerPosition]();
-    }   
+    120: function () {
+      alert(
+        "Congratulations! You've become a Jedi Master and saved the galaxy!"
+      );
+    },
+  };
+
+  const currentPosition = document.querySelector(".position.active");
+  currentPosition.classList.remove("active");
+  // Get the new position element and add the "active" class to it
+  const newPosition = document.getElementById("position-" + playerPosition);
+  newPosition.classList.add("active");
+  if (positionActions[playerPosition]) {
+    positionActions[playerPosition]();
   }
+}
 
+// Function to handle positive action
+function handlePositiveAction() {
+  const positiveActions = [
+    "You discovered an Ewok village. Move forward 3 steps.",
+    "You befriended an Ewok warrior. Move forward 2 steps.",
+    "You found a hidden cache of Rebel supplies. Move forward 4 steps.",
+    "You rode a speeder bike through the dense forests of Endor. Move forward 5 steps.",
+    "You received guidance from a wise Ewok elder. Move forward 2 steps.",
+    "You helped the Ewoks fend off an Imperial scout patrol. Move forward 3 steps.",
+    "You stumbled upon the remnants of an ancient Jedi temple. Move forward 4 steps.",
+    "You witnessed a stunning Endorian sunset. Move forward 2 steps.",
+    "You rescued a stranded Rebel pilot. Move forward 3 steps.",
+    "You encountered a playful Ewok tribe. Move forward 2 steps.",
+    "You discovered a secret Rebel outpost on Endor. Move forward 4 steps.",
+    "You navigated through the treacherous Ewok tree bridges. Move forward 5 steps.",
+    "You found a hidden path leading to an Endorian waterfall. Move forward 3 steps.",
+    "You participated in an Ewok celebration feast. Move forward 2 steps.",
+    "You encountered a rare species of Endorian wildlife. Move forward 4 steps.",
+    "You received a message from the Rebel Alliance leadership. Move forward 3 steps.",
+    "You explored the ancient Ewok cave dwellings. Move forward 2 steps.",
+    "You helped the Ewoks build a defense against the Empire. Move forward 5 steps.",
+    "You witnessed a traditional Ewok tribal dance. Move forward 2 steps.",
+    "You received the honor of being named an honorary Ewok. Move forward 4 steps.",
+  ];
 
-  
-  
-  // Function to handle positive action
-  function handlePositiveAction() {
-    const positiveActions = [
-      "You discovered an Ewok village. Move forward 3 steps.",
-      "You befriended an Ewok warrior. Move forward 2 steps.",
-      "You found a hidden cache of Rebel supplies. Move forward 4 steps.",
-      "You rode a speeder bike through the dense forests of Endor. Move forward 5 steps.",
-      "You received guidance from a wise Ewok elder. Move forward 2 steps.",
-      "You helped the Ewoks fend off an Imperial scout patrol. Move forward 3 steps.",
-      "You stumbled upon the remnants of an ancient Jedi temple. Move forward 4 steps.",
-      "You witnessed a stunning Endorian sunset. Move forward 2 steps.",
-      "You rescued a stranded Rebel pilot. Move forward 3 steps.",
-      "You encountered a playful Ewok tribe. Move forward 2 steps.",
-      "You discovered a secret Rebel outpost on Endor. Move forward 4 steps.",
-      "You navigated through the treacherous Ewok tree bridges. Move forward 5 steps.",
-      "You found a hidden path leading to an Endorian waterfall. Move forward 3 steps.",
-      "You participated in an Ewok celebration feast. Move forward 2 steps.",
-      "You encountered a rare species of Endorian wildlife. Move forward 4 steps.",
-      "You received a message from the Rebel Alliance leadership. Move forward 3 steps.",
-      "You explored the ancient Ewok cave dwellings. Move forward 2 steps.",
-      "You helped the Ewoks build a defense against the Empire. Move forward 5 steps.",
-      "You witnessed a traditional Ewok tribal dance. Move forward 2 steps.",
-      "You received the honor of being named an honorary Ewok. Move forward 4 steps.",
-    ];
-    
+  const randomAction =
+    positiveActions[Math.floor(Math.random() * positiveActions.length)];
+  alert(randomAction);
 
-    const randomAction = positiveActions[Math.floor(Math.random() * positiveActions.length)];
-    alert(randomAction);
-
-    if (randomAction.includes("Move forward")) {
-      const steps = parseInt(randomAction.match(/\d+/)[0], 10);
-      playerPosition += steps;
-    }
+  if (randomAction.includes("Move forward")) {
+    const steps = parseInt(randomAction.match(/\d+/)[0], 10);
+    playerPosition += steps;
   }
+}
 
+// Function to handle negative action
+function handleNegativeAction() {
+  const negativeActions = [
+    "You stumbled into an Ewok trap. Move back 3 steps.",
+    "You angered a territorial Gorax. Move back 2 steps.",
+    "You got entangled in Endorian vines. Move back 4 steps.",
+    "You encountered a hostile tribe of Duloks. Move back 5 steps.",
+    "You fell into an Ewok pitfall. Move back 2 steps.",
+    "You got lost in the dense forests of Endor. Move back 3 steps.",
+    "You were chased by a pack of wild Wisties. Move back 4 steps.",
+    "You encountered a treacherous Ewok hunting party. Move back 2 steps.",
+    "You were caught in an Ewok net trap. Move back 3 steps.",
+    "You disturbed the sacred burial grounds of the Ewoks. Move back 2 steps.",
+    "You encountered an enraged mother Gorax. Move back 4 steps.",
+    "You got caught in an Endorian thunderstorm. Move back 5 steps.",
+    "You encountered a swarm of dangerous Endorian insects. Move back 3 steps.",
+    "You accidentally angered an Ewok shaman. Move back 2 steps.",
+    "You triggered an Ewok booby trap. Move back 4 steps.",
+    "You disturbed the natural balance of the Endorian ecosystem. Move back 3 steps.",
+    "You encountered a group of hostile Endorian wildlife. Move back 2 steps.",
+    "You angered a territorial flock of Yuzzum birds. Move back 5 steps.",
+    "You got caught in an Ewok log trap. Move back 2 steps.",
+    "You stumbled upon a forbidden Ewok sacred site. Move back 4 steps.",
+  ];
 
-  // Function to handle negative action
-  function handleNegativeAction() {
-    const negativeActions = [
-      "You stumbled into an Ewok trap. Move back 3 steps.",
-      "You angered a territorial Gorax. Move back 2 steps.",
-      "You got entangled in Endorian vines. Move back 4 steps.",
-      "You encountered a hostile tribe of Duloks. Move back 5 steps.",
-      "You fell into an Ewok pitfall. Move back 2 steps.",
-      "You got lost in the dense forests of Endor. Move back 3 steps.",
-      "You were chased by a pack of wild Wisties. Move back 4 steps.",
-      "You encountered a treacherous Ewok hunting party. Move back 2 steps.",
-      "You were caught in an Ewok net trap. Move back 3 steps.",
-      "You disturbed the sacred burial grounds of the Ewoks. Move back 2 steps.",
-      "You encountered an enraged mother Gorax. Move back 4 steps.",
-      "You got caught in an Endorian thunderstorm. Move back 5 steps.",
-      "You encountered a swarm of dangerous Endorian insects. Move back 3 steps.",
-      "You accidentally angered an Ewok shaman. Move back 2 steps.",
-      "You triggered an Ewok booby trap. Move back 4 steps.",
-      "You disturbed the natural balance of the Endorian ecosystem. Move back 3 steps.",
-      "You encountered a group of hostile Endorian wildlife. Move back 2 steps.",
-      "You angered a territorial flock of Yuzzum birds. Move back 5 steps.",
-      "You got caught in an Ewok log trap. Move back 2 steps.",
-      "You stumbled upon a forbidden Ewok sacred site. Move back 4 steps.",
-    ];
-  
-    const randomAction = negativeActions[Math.floor(Math.random() * negativeActions.length)];
-    alert(randomAction);
-  
-    if (randomAction.includes("Move back")) {
-      const steps = parseInt(randomAction.match(/\d+/)[0], 10);
-      playerPosition -= steps;
-    }
+  const randomAction =
+    negativeActions[Math.floor(Math.random() * negativeActions.length)];
+  alert(randomAction);
+
+  if (randomAction.includes("Move back")) {
+    const steps = parseInt(randomAction.match(/\d+/)[0], 10);
+    playerPosition -= steps;
   }
+}
 
- // This function includes logic for player movement through the short cuts and noraml paths.
+// This function includes logic for player movement through the short cuts and noraml paths.
 
- function calculateNextPosition(currentPosition, steps) {
+function calculateNextPosition(currentPosition, steps) {
   let nextPosition;
 
   // Right path from positions 1 to 14
