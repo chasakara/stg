@@ -26,6 +26,7 @@
                 <source src="docs/intro.mp4" type="video/mp4" />
             </video>
             <a class="continue-btn" onclick="redirectToGame()">Continue...</a>
+            <p><br><br></p>
         </div>
 
         <script>
@@ -38,7 +39,7 @@
                     document.getElementById("countdownTimer").textContent =
                         timeLeft;
                     if (timeLeft <= 0) {
-                        window.open("gamegit add ..html", "_self");  
+                        window.open("game.html", "_self");  
                     } 
                 }, 1000);
             };
