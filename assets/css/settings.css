@@ -67,9 +67,13 @@ legend {
     padding: 1%;
 }
 
+legend i {
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
 .settingBtns {
     width: 100%;
-    text-shadow: 3px 3px 2px #4d4d4d;
 }
 
 .settingBtnborder {
