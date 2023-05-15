@@ -956,3 +956,7 @@ cursor: pointer;
   border-radius: 50%;
   margin: 0 0 0 17%;
 }
+
+.position.active{
+  background: white;
+}
