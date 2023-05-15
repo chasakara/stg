@@ -738,7 +738,7 @@ footer a:hover {
 }
 
 #video-container {
-  width: 85vw;
+  width: 75vw;
   height: auto;
   margin: 0 auto;
   text-align: center;
@@ -1049,4 +1049,10 @@ cursor: pointer;
   height: 8vh;
   background-image: linear-gradient(to bottom right, #a5a5a5, #dadada, #dadada, #ececec, #f7f7f7, #b9b9b9, #919191);
   margin: 0 auto;
+}
+
+#choose-level {
+  margin-left: 42vw;
+  height: 25px;
+  padding: 15px;
 }
