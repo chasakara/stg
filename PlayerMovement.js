@@ -198,9 +198,12 @@ players.forEach((player) => {
 
 
 // function to handle player position
-function handlePlayerPosition() {
+function handlePlayerPosition(playerPosition) {
+  
     const positionActions = {
       
+    
+
       //  logic for dice rolls at shortcut paths
       0: function () {
         // Handle action for position 0 (Starting point)
@@ -382,13 +385,14 @@ function handlePlayerPosition() {
       },
     };
   
+    const currentPosition = document.querySelector(".position.active");
+    currentPosition.classList.remove("active");
+    // Get the new position element and add the "active" class to it
+    const newPosition = document.getElementById("position-" + playerPosition);
+    newPosition.classList.add("active");
     if (positionActions[playerPosition]) {
       positionActions[playerPosition]();
-    } 
-  
-    // Get the current position element and add the "active" class to it
-    const currentPosition = document.getElementById("position-" + playerPosition);
-    currentPosition.classList.add("active");
+    }   
   }
 
 
