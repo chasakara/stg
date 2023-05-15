@@ -47,7 +47,7 @@ for (let i = 1; i <= numberOfPlayers; i++) {
 function determinePlayerOrder() {
   // Roll a random dice and return the result
   function rollDice() {
-    return Math.floor(Math.random() * 6) + 1;
+    return * 6) + 1;
   }
   players.forEach((player) => {
     player.position = 0; // Set the initial position to 0 for each player

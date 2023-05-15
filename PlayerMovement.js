@@ -1,4 +1,4 @@
-// let playerPosition = 17; // starting point for the player on the game board.
+let playerPosition = 0; // starting point for the player on the game board.
 
 // Function to roll the dice and move the player
 const diceOne = document.querySelector(".diceOne");
@@ -169,18 +169,32 @@ function movePlayer(playerPosition, steps) {
 }
 
 function playTurn(player) {
-  const promptMessage = `It's ${player.name}'s turn. Click OK to roll dice`;
+  const promptMessage = `It's ${player.name}'s turn. Click OK to roll the dice`;
   let steps = 0;
+
   if (confirm(promptMessage)) {
-    steps += Math.floor(Math.random() * 6 + 1);
+    steps += Math.floor(Math.random() * 12 + 1);
   }
+
   console.log(`${player.name} rolled ${steps}`);
-  movePlayer(playerPosition, steps);
+
+  // Calculate the new position by adding the steps to the current position
+  const newPosition = playerPosition + steps;
+
+  // Move the player to the new position
+  movePlayer(newPosition);
+
+  // Update the player position variable with the new position
+  playerPosition = newPosition;
+
   console.log(
     `${player.name} moved ${steps} steps and is now at position ${playerPosition}`
   );
-  handlePlayerPosition();
+
+  // Handle the player's position
+  handlePlayerPosition(playerPosition);
 }
+
 
 // Determine player order at start of  game
 // determinePlayerOrder();
@@ -197,15 +211,15 @@ function handlePlayerPosition() {
     0: function () {
       // Handle action for position 0 (Starting point)
 
-      alert(
+      console.log(
         "You have crash landed on the planet of Endor you must roll the dice to choose a path"
       );
 
       if (diceResult > 6) {
-        alert("You rolled a total of", diceResult + ". take the shortcut!");
+        console.log("You rolled a total of", diceResult + ". take the shortcut!");
         playerPosition = 15;
       } else {
-        alert("You rolled a total of", diceResult + ". follow the path!");
+        console.log("You rolled a total of", diceResult + ". follow the path!");
 
         playerPosition = 1;
       }
@@ -213,13 +227,13 @@ function handlePlayerPosition() {
     51: function () {
       // Handle shortcut option for position 51
 
-      alert("you must roll the dice to choose a path");
+      console.log("you must roll the dice to choose a path");
 
       if (diceResult > 6) {
-        alert("You rolled a total of", diceResult + ". take the shortcut!");
+        console.log("You rolled a total of", diceResult + ". take the shortcut!");
         playerPosition = 62;
       } else {
-        alert("You rolled a total of", diceResult + ". follow the path!");
+        console.log("You rolled a total of", diceResult + ". follow the path!");
 
         playerPosition = 52;
       }
@@ -227,13 +241,13 @@ function handlePlayerPosition() {
     70: function () {
       // Handle shortcut option for position 70
 
-      alert("you must roll the dice to choose a path");
+      console.log("you must roll the dice to choose a path");
 
       if (diceResult > 6) {
-        alert("You rolled a total of", diceResult + ". take the shortcut!");
+        console.log("You rolled a total of", diceResult + ". take the shortcut!");
         playerPosition = 89;
       } else {
-        alert("You rolled a total of", diceResult + ". follow the path!");
+        console.log("You rolled a total of", diceResult + ". follow the path!");
 
         playerPosition = 80;
       }
@@ -241,13 +255,13 @@ function handlePlayerPosition() {
     102: function () {
       // Handle shortcut option for position 102
 
-      alert("you must roll the dice to choose a path");
+      console.log("you must roll the dice to choose a path");
 
       if (diceResult > 6) {
-        alert("You rolled a total of", diceResult + ". take the shortcut!");
+        console.log("You rolled a total of", diceResult + ". take the shortcut!");
         playerPosition = 112;
       } else {
-        alert("You rolled a total of", diceResult + ". follow the path!");
+        console.log("You rolled a total of", diceResult + ". follow the path!");
 
         playerPosition = 103;
       }
@@ -255,7 +269,7 @@ function handlePlayerPosition() {
     1: function () {
       // Handle action for position 1
 
-      alert("You are on the right path");
+      console.log("You are on the right path");
     },
 
     10: function () {
@@ -268,7 +282,7 @@ function handlePlayerPosition() {
     },
     15: function () {
       // beginning of shortcut
-      alert("You have taken the shortcut");
+      console.log("You have taken the shortcut");
     },
     17: function () {
       // Negative action for position 17
@@ -364,17 +378,24 @@ function handlePlayerPosition() {
     },
 
     120: function () {
-      alert(
+      console.log(
         "Congratulations! You've become a Jedi Master and saved the galaxy!"
       );
     },
   };
 
   const currentPosition = document.querySelector(".position.active");
-  currentPosition.classList.remove("active");
+  if (currentPosition) {
+    currentPosition.classList.remove("active");
+  }
+
   // Get the new position element and add the "active" class to it
   const newPosition = document.getElementById("position-" + playerPosition);
-  newPosition.classList.add("active");
+  if (newPosition) {
+    newPosition.classList.add("active");
+  }
+
+  // Execute the position action if available
   if (positionActions[playerPosition]) {
     positionActions[playerPosition]();
   }
@@ -407,7 +428,7 @@ function handlePositiveAction() {
 
   const randomAction =
     positiveActions[Math.floor(Math.random() * positiveActions.length)];
-  alert(randomAction);
+  console.log(randomAction);
 
   if (randomAction.includes("Move forward")) {
     const steps = parseInt(randomAction.match(/\d+/)[0], 10);
@@ -442,7 +463,7 @@ function handleNegativeAction() {
 
   const randomAction =
     negativeActions[Math.floor(Math.random() * negativeActions.length)];
-  alert(randomAction);
+  console.log(randomAction);
 
   if (randomAction.includes("Move back")) {
     const steps = parseInt(randomAction.match(/\d+/)[0], 10);
@@ -534,3 +555,4 @@ function calculateNextPosition(currentPosition, steps) {
 
   return nextPosition;
 }
+movePlayer(2)
