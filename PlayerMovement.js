@@ -1,4 +1,4 @@
-let playerPosition = 0; // starting point for the player on the game board.
+// let playerPosition = 0; // starting point for the player on the game board.
 
 // Function to roll the dice and move the player
 const diceOne = document.querySelector(".diceOne");
@@ -54,7 +54,7 @@ const rollDiceOne = (randomOne) => {
                 break;
         }
 
-        diceOne.classList.remove("rolling-animation") = "none";
+        diceOne.classList.remove("rolling-animation");
     }, 1050);
 };
 
@@ -104,7 +104,6 @@ const rollDiceTwo = (randomTwo) => {
     }, 1050);
     
 };
-
 
 rollBtn.addEventListener("click", randomDice);
 
@@ -175,7 +174,7 @@ function movePlayer(playerPosition, steps) {
 
 function playTurn(player) {
   console.log(`It's ${player.name}'s turn.`);
-  const steps = rollDice();
+  const steps = diceResult;
   console.log(`${player.name} rolled ${steps}`);
   movePlayer(playerPosition, steps);
   console.log(
@@ -198,9 +197,12 @@ players.forEach((player) => {
 
 
 // function to handle player position
-function handlePlayerPosition() {
+function handlePlayerPosition(playerPosition) {
+  
     const positionActions = {
       
+    
+
       //  logic for dice rolls at shortcut paths
       0: function () {
         // Handle action for position 0 (Starting point)
@@ -382,13 +384,14 @@ function handlePlayerPosition() {
       },
     };
   
+    const currentPosition = document.querySelector(".position.active");
+    currentPosition.classList.remove("active");
+    // Get the new position element and add the "active" class to it
+    const newPosition = document.getElementById("position-" + playerPosition);
+    newPosition.classList.add("active");
     if (positionActions[playerPosition]) {
       positionActions[playerPosition]();
-    } 
-  
-    // Get the current position element and add the "active" class to it
-    const currentPosition = document.getElementById("position-" + playerPosition);
-    currentPosition.classList.add("active");
+    }   
   }
 
 
@@ -548,4 +551,3 @@ function handlePlayerPosition() {
 
   return nextPosition;
 }
-
